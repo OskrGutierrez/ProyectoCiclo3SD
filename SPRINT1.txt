@@ -23,3 +23,10 @@ pero siempre me ha gustado el tema de los sistemas.
 Actualmente estoy empezando a tener experiencia en el mundo laboral 
 en ingenieria y ciencia de datos, por lo cual me interesa aprender a programar y luego
 enfocerme en python y estadística predictiva con modelos de machine learning e IA.
+
+OSCAR ANDRÉS GUTIÉRREZ BOLAÑOS - Soy ingeniero civil, calculista de estructuras y docente ocasional
+de la Universidad Nacional de Colombia, sede Manizales. A mi cargo he tenido cursos de programación
+de computadores, en donde he enseñado matlab y python. El próximo semestre mi deseo es aplicar lo aprendido 
+en la ruta 2 de la mision tic para motivar a estos futuros profesionales en el mundo de la programación.
+No tengo experiencia como desarrollador de software, sin embargo, mi deseo es dedicarme el próximo año
+a esta área de la ingeniería.
