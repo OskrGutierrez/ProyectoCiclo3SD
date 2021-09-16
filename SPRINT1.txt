@@ -1,0 +1,10 @@
+Este repositorio de gut hub es creado por el grupo de programadores SD (Super developers)
+para el diseño y programacion de una aplicacion capaz de gestionar la contabilidad de una
+empresa de ventas.
+
+INTEGRANTES:
+JESUS RODRIGUEZ - Soy ingeniero electromecanico, tengo 27 años, soy de barranquilla pero me
+crie en boyaca; a raiz de varios proyectos que lleve acabo en el ambito laboral empece a inte-
+resarme por la progrmacion y aspiro aprender lo suficiente como para dedicarme laboralmente a
+ella ya que me gusta todo lo que gira en torno a la programacion y la tecnologiaademas
+laboral y ecomomicamente es un area muy viable.
