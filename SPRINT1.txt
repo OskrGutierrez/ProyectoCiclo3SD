@@ -14,4 +14,12 @@ EDWIN ALEJANDRO - soy bachiller, actual estudiante de MisionTic
 y de Seguridad informatica,
 tengo 19 años,soy de medellin,
 la tecnologia y las ciencias me apacionan desde pequeño,
-mi vision a futuro es trabajar o dedicar mi vida a las ciencias y las tecnologias aportando asi mi granito de arena a la sociedad 
+mi vision a futuro es trabajar o dedicar mi vida a las ciencias y 
+las tecnologias aportando asi mi granito de arena a la sociedad.
+
+DANIELA QUICENO GIRALDO - Hola mucho gusto, soy de Medellín, tengo 30 años y
+soy Ingeniera Industrial. Toda mi experiencia laboral esta enfocada en la logística, 
+pero siempre me ha gustado el tema de los sistemas.
+Actualmente estoy empezando a tener experiencia en el mundo laboral 
+en ingenieria y ciencia de datos, por lo cual me interesa aprender a programar y luego
+enfocerme en python y estadística predictiva con modelos de machine learning e IA.
