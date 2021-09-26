@@ -5,13 +5,14 @@ ul{
     list-style: none;
     padding: 0px;
     margin: 0px;
+    color: #000000;
 }
 
 .navBar1{
     display: flex;
     justify-content: space-between;
     padding: 7px;
-    background-color: #FFA62B;
+    background-color: #82C0CC;
 }
 .navBarinterno{
     display: flex;
@@ -24,33 +25,41 @@ ul{
     display: flex;
     justify-content: space-around;
     padding: 4px;
-    background-color: #82C0CC;
+    background-color: #FFA62B;
 }
 
 .piePagina{
     display: flex;
     justify-content: space-evenly;
+    background-color: #82C0CC;
+    padding: 0px;
 }
 
 .logo{
     height: 40px;
 }
 
-.mainButton{
-    background-color: #EDE7E3;
-    color: #82C0CC;
+.button{
     border: 0px;
     padding: 4px 10px;
     border-radius: 8px;
     font-weight: bolder;
-    box-shadow: 2px 2px #82C0CC ;
+    color: #16697A;
 }
-
-.mainButton:hover{
+.button:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
 
+.mainButton{
+    background-color: #EDE7E3;
+    box-shadow: 2px 2px #FFA62B ;
+}
+
+.secundaryButton{
+    background-color: #EDE7E3;
+    box-shadow: 2px 2px #82C0CC ;
+}
 .logo:hover{
     cursor: pointer;
     transform: scale(1.1);
