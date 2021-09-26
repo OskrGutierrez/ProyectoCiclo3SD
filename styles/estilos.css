@@ -11,11 +11,20 @@ ul{
     display: flex;
     justify-content: space-between;
     padding: 7px;
+    background-color: #FFA62B;
+}
+.navBarinterno{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .navBar2{
     display: flex;
     justify-content: space-around;
     padding: 4px;
+    background-color: #82C0CC;
 }
 
 .piePagina{
@@ -24,5 +33,25 @@ ul{
 }
 
 .logo{
-    height: 50px;
+    height: 40px;
+}
+
+.mainButton{
+    background-color: #EDE7E3;
+    color: #82C0CC;
+    border: 0px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: bolder;
+    box-shadow: 2px 2px #82C0CC ;
+}
+
+.mainButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.logo:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
