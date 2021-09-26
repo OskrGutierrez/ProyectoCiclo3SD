@@ -30,7 +30,7 @@ ul{
 
 .piePagina{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     background-color: #82C0CC;
     padding: 0px;
 }
@@ -63,4 +63,7 @@ ul{
 .logo:hover{
     cursor: pointer;
     transform: scale(1.1);
+}
+.mainContainer{
+    height: 100%;
 }
