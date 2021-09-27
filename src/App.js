@@ -1,5 +1,6 @@
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import logoEmpresa from './media/logoVentas.png';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
         <div>
             <ul className="navBar1">
                 <li>
-                    <img className="logo" src="./media/logoVentas.png" alt="LogoVentas"/>
+                    <img className="logo" src={logoEmpresa} alt="LogoVentas"/>
                 </li>
                 <ul className="navBarinterno">
                     <li className="navBarinterno">
