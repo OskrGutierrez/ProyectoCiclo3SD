@@ -1,6 +1,7 @@
 function PiePagina(){
     return(
-        <footer>
+        <div>
+            <footer>
                 <ul className="piePagina">
                     <li className="navBarinterno">Tienes dudas? contactanos</li>
                     <li>
@@ -11,8 +12,8 @@ function PiePagina(){
                         </ul>
                     </li>
                 </ul>
-            </footer>  
-
+            </footer> 
+        </div>
     )
 }
 export default PiePagina;
