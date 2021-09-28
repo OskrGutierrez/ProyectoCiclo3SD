@@ -10,11 +10,11 @@ function ModuloVentas(){
             <main>
                 <ul>
                     <li>Este es el modulo de las ventas</li>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
+                    <li>Este es el modulo de las ventas</li>
+                    <li>Este es el modulo de las ventas</li>
+                    <li>Este es el modulo de las ventas</li>
+                    <li>Este es el modulo de las ventas</li>
+                    <li>Este es el modulo de las ventas</li>
                 </ul>
             </main>
             <PiePagina></PiePagina>         
