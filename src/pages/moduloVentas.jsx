@@ -1,14 +1,17 @@
-import logo from './logo.svg';
-import './styles/App.css';
-import logoEmpresa from './media/logoVentas.png';
+import '../styles/App.css';
+import logoEmpresa from '../media/logoVentas.png';
 import Cabeza from '../components/Cabeza';
+import PiePagina from '../components/PiePagina';
 
-function Index(){
+function ModuloVentas(){
     return (
         <div>
             <Cabeza></Cabeza>
             <main>
                 <ul>
+                    <li>Este es el modulo de las ventas</li>
+                    <li>CONTENIDO</li>
+                    <li>CONTENIDO</li>
                     <li>CONTENIDO</li>
                     <li>CONTENIDO</li>
                     <li>CONTENIDO</li>
@@ -18,4 +21,4 @@ function Index(){
         </div>
     )
 }
-export default Index;
+export default ModuloVentas;

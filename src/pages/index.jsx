@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import './styles/App.css';
-import logoEmpresa from './media/logoVentas.png';
+import logoEmpresa from '../media/logoVentas.png';
 import Cabeza from '../components/Cabeza';
 
 function Index(){
@@ -9,11 +9,11 @@ function Index(){
             <Cabeza></Cabeza>
             <main>
                 <ul>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
-                    <li>CONTENIDO</li>
+                    <li>Este es el index</li>
+                    <li>Este es el index</li>
+                    <li>Este es el index</li>
+                    <li>Este es el index</li>
+                    <li>Este es el index</li>
                     <li>CONTENIDO</li>
                     <li>CONTENIDO</li>
                     <li>CONTENIDO</li>
@@ -30,8 +30,8 @@ function Index(){
                     <li>CONTENIDO</li>
                     <li>CONTENIDO</li>
                 </ul>
-            </main>
-              
+            </main> 
+            <PiePagina></PiePagina>    
         </div>
     )
 }

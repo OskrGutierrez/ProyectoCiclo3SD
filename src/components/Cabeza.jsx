@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './styles/App.css';
-import logoEmpresa from './media/logoVentas.png';
+import logo from '../logo.svg';
+import '../styles/App.css';
+import logoEmpresa from '../media/logoVentas.png';
 
 function Cabeza(){
     return(
