@@ -64,3 +64,15 @@ ul{
   cursor: pointer;
   transform: scale(1.1);
 }
+
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /*vh: viewport height*/
+  overflow-y: hidden;
+}
+
+.mainContainer > main {
+  height: 100%; 
+  overflow-y: scroll; 
+}
