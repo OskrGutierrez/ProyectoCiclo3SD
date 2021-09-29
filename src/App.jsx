@@ -17,19 +17,24 @@ function App() {
 
       <Router>
         <MainLayout>
-          <Switch>
-            <Route path="/Inicio">
-              <Inicio />
-            </Route>
-            <Route path="/moduloProductos">
-              <ModuloProductos />
-            </Route>
-            <Route path="/moduloUsuarios">
-              <ModuloUsuarios />
-            </Route>
-            <Route path="/moduloVentas">
+          <Switch>            
+
+            <Route path="/moduloVentas" exact>
               <ModuloVentas />
             </Route>
+
+            <Route path="/moduloProductos" exact>
+              <ModuloProductos />
+            </Route>
+
+            <Route path="/moduloUsuarios" exact>
+              <ModuloUsuarios />
+            </Route>
+
+            <Route path="/Inicio" exact>
+              <Inicio />
+            </Route>
+
           </Switch>
         </MainLayout>
       </Router>

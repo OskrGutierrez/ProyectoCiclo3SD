@@ -30,8 +30,8 @@ function Cabeza() {
                 <div>
                     <ul className="navBar2">
                         <ModulesButton buttonName='VENTAS' modulePage='moduloVentas' />
-                        <ModulesButton buttonName='PRODUCTOS' modulePage='moduloUsuarios' />
-                        <ModulesButton buttonName='USUARIOS' modulePage='moduloProductos' />
+                        <ModulesButton buttonName='PRODUCTOS' modulePage='moduloProductos' />
+                        <ModulesButton buttonName='USUARIOS' modulePage='moduloUsuarios' />
                     </ul>
                 </div>
             </header>

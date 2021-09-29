@@ -1,0 +1,45 @@
+
+.productOpctionsContainer{
+    display: flex;
+    justify-content: space-between;  
+    padding: 5vh;
+  }
+  
+  .opctionContainer{
+    margin: 10px;
+    background-color: rgb(141, 139, 139);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 4px 8px rgb(238, 235, 235);  
+    display: flex;
+  }
+  
+  .opctionContainer:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+  }
+  
+  .mainTitle{
+    color: black;
+    font-size:6vh;
+    font-weight: bolder;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .secondaryTitle{
+    color:black;
+    font-size: 3vh;
+    font-style: oblique;
+    text-align: center;
+    padding: 3vh;
+  }
+  
+  .setupIconOP{
+    color: black;
+    font-size: 4vh;  
+    padding: 3vh;
+    padding-right: 0vh;
+  }
