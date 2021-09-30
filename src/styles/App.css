@@ -1,71 +1,71 @@
-body{
+body {
   margin: 0px;
 }
-ul{
+ul {
   list-style: none;
   padding: 0px;
   margin: 0px;
   color: #000000;
 }
 
-.navBar1{
+.navBar1 {
   display: flex;
   justify-content: space-between;
   padding: 7px;
-  background-color: #82C0CC;
+  background-color: #82c0cc;
 }
-.navBarinterno{
+.navBarinterno {
   display: flex;
   justify-content: space-between;
   padding: 0px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.navBar2{
+.navBar2 {
   display: flex;
   justify-content: space-around;
   padding: 4px;
-  background-color: #FFA62B;
+  background-color: #ffa62b;
 }
 
-.piePagina{
+.piePagina {
   display: flex;
   justify-content: flex-end;
-  background-color: #82C0CC;
+  background-color: #82c0cc;
   padding: 0px;
 }
 
-.logo{
+.logo {
   height: 40px;
 }
 
-.button{
+.button {
   border: 0px;
   padding: 4px 10px;
   border-radius: 8px;
   font-weight: bolder;
-  color: #16697A;
+  color: #16697a;
 }
-.button:hover{
+.button:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.mainButton{
-  background-color: #EDE7E3;
-  box-shadow: 2px 2px #FFA62B ;
+.mainButton {
+  background-color: #ede7e3;
+  box-shadow: 2px 2px #ffa62b;
 }
 
-.secundaryButton{
-  background-color: #EDE7E3;
-  box-shadow: 2px 2px #82C0CC ;
+.secundaryButton {
+  background-color: #ede7e3;
+  box-shadow: 2px 2px #82c0cc;
 }
-.logo:hover{
+.logo:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
 
-.mainContainer{
+.mainContainer {
   display: flex;
   flex-direction: column;
   height: 100vh; /*vh: viewport height*/
@@ -73,8 +73,8 @@ ul{
 }
 
 .mainContainer > main {
-  height: 100%; 
-  overflow-y: scroll; 
+  height: 100%;
+  overflow-y: scroll;
 }
 
 

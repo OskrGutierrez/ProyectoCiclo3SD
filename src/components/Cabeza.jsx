@@ -1,12 +1,12 @@
-import '../styles/App.css';
-import logoEmpresa from '../media/logoVentas.png';
-import ModulesButton from './ModulesButton';
-import { Link } from 'react-router-dom';
+import "../styles/App.css";
+import logoEmpresa from "../media/logoVentas.png";
+import ModulesButton from "./ModulesButton";
+import { Link } from "react-router-dom";
 
 function Cabeza() {
-    return (
-        <div>
-            <header>
+  return (
+    <div>
+           <header>
                 <div>
                     <ul className="navBar1">
                         <li>
@@ -36,7 +36,7 @@ function Cabeza() {
                 </div>
             </header>
         </div>
-
-    )
+    
+  );
 }
 export default Cabeza;
