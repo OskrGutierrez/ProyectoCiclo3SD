@@ -1,4 +1,5 @@
 import './styles/App.css';
+import './styles/ProductStyles.css';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -8,8 +9,9 @@ import {
 import ModuloVentas from './pages/moduloVentas';
 import Inicio from './pages/Inicio';
 import ModuloUsuarios from './pages/moduloUsuarios';
-import ModuloProductos from './pages/moduloProductos';
+import PrincipalProductos from './pages/moduloPrueba/PrincipalProductos';
 import MainLayout from './layouts/MainLayout';
+import RegistrarProducto from './pages/moduloPrueba/RegistrarProducto';
 
 function App() {
   return (
@@ -24,8 +26,15 @@ function App() {
             </Route>
 
             <Route path="/moduloProductos" exact>
-              <ModuloProductos />
-            </Route>
+              <PrincipalProductos />              
+            </Route>   
+
+            <Route path="/RegistrarProducto" exact>
+              <RegistrarProducto />              
+            </Route> 
+
+
+
 
             <Route path="/moduloUsuarios" exact>
               <ModuloUsuarios />
