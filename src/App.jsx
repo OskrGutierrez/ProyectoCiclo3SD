@@ -12,6 +12,8 @@ import ModuloUsuarios from './pages/moduloUsuarios';
 import PrincipalProductos from './pages/moduloPrueba/PrincipalProductos';
 import MainLayout from './layouts/MainLayout';
 import RegistrarProducto from './pages/moduloPrueba/RegistrarProducto';
+import ModifVenta from './pages/modifVenta';
+
 
 function App() {
   return (
@@ -31,10 +33,11 @@ function App() {
 
             <Route path="/RegistrarProducto" exact>
               <RegistrarProducto />              
-            </Route> 
+            </Route>
 
-
-
+            <Route path="/modificarVenta" exact>
+              <ModifVenta />              
+            </Route>
 
             <Route path="/moduloUsuarios" exact>
               <ModuloUsuarios />
