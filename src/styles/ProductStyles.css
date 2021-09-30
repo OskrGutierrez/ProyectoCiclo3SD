@@ -44,3 +44,15 @@
     padding: 3vh;
     padding-right: 0vh;
   }
+
+  .containerBotonIngreso{
+    display:flex;    
+    padding: 3vh;
+  }
+
+  .styleTextoInput{
+    padding-right: 4vh;
+    font-style: oblique;    
+  }
+
+  

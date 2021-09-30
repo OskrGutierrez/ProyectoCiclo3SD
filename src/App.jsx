@@ -9,9 +9,11 @@ import {
 import ModuloVentas from './pages/moduloVentas';
 import Inicio from './pages/Inicio';
 import ModuloUsuarios from './pages/moduloUsuarios';
-import PrincipalProductos from './pages/moduloPrueba/PrincipalProductos';
+import ModuloProductos from './pages/moduloPrueba/moduloProductos';
+import RegistroProducto from './pages/moduloPrueba/RegistrarProducto'
+import VisProductos from './pages/moduloPrueba/VerProductos';
+import ActProductos from './pages/moduloPrueba/ActualizarProductos';
 import MainLayout from './layouts/MainLayout';
-import RegistrarProducto from './pages/moduloPrueba/RegistrarProducto';
 
 function App() {
   return (
@@ -26,15 +28,20 @@ function App() {
             </Route>
 
             <Route path="/moduloProductos" exact>
-              <PrincipalProductos />              
-            </Route>   
+              <ModuloProductos />              
+            </Route>  
 
             <Route path="/RegistrarProducto" exact>
-              <RegistrarProducto />              
-            </Route> 
+              <RegistroProducto />              
+            </Route>  
 
+            <Route path="/VerProductos" exact>
+              <VisProductos />              
+            </Route>     
 
-
+            <Route path="/ActualizarProductos" exact>
+              <ActProductos />              
+            </Route>      
 
             <Route path="/moduloUsuarios" exact>
               <ModuloUsuarios />
