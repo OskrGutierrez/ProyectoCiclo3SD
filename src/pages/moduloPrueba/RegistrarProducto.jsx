@@ -10,8 +10,8 @@ function RegistrarProducto() {
             <ul className='.productOpctionsContainer'>
 
                 <form >
-                    <div className='containerBotonIngreso'>
-                        <BotonIngresoN nameButton='ID:' typeInputButton='number' />
+                    <div className='mainContainerBotonIngresoRegistrar'>
+                        <BotonIngresoN nameButton='ID del producto:' typeInputButton='number' />
                         <BotonIngresoNN nameButton='Nombre del producto:' typeInputButton='text' />
                         <BotonIngresoNN nameButton='Fecha de ingreso:' typeInputButton='date' />
                         <BotonIngresoN nameButton='Valor antes del IVA:' typeInputButton='number' />
@@ -21,7 +21,7 @@ function RegistrarProducto() {
                             <button>Ingresar Producto</button>
                         </li>
                         <li className='styleMessage'>
-                            El producto se registro satisfactoriamente!
+                            El producto se registró satisfactoriamente!
                         </li>
                     </div>
                 </form>

@@ -26,6 +26,7 @@
     font-size:6vh;
     font-weight: bolder;
     padding: 40px;
+    padding-bottom: 10px;
     text-align: center;
   }
   
@@ -45,14 +46,19 @@
     padding-right: 0vh;
   }
 
-  .containerBotonIngreso{
+  .mainContainerBotonIngresoRegistrar{
     display:flex;    
-    padding: 3vh;       
+    padding: 3vh;   
+    justify-content: space-between;
   }
 
+  .containerBotonIngreso{
+    display:flex;    
+    padding: 3vh;   
+  }
   .styleTextoInput{    
     font-style: oblique;
-    padding-right: 2vh;    
+    padding-right: 2vh;     
   }
 
   .espacioDerBotones{
@@ -61,16 +67,44 @@
 
   .styleBotonInput{
     padding:0px;
+    max-width: 140px;
   }
 
   .styleNotas{
     padding: 3vh;
+    padding-top: 1px;
+    padding-bottom: 1px;
     font-weight: bolder;
   }
 
   .styleMessage{
     padding-left: 3vh;
     font-weight: bolder;
+  }
+
+  .mainContainerInfoSalida{
+    display:flex;        
+    justify-content: space-between;
+    padding: 8vh;
+    padding-top: 0vh;
+    padding-bottom: 3vh;
+
+  }
+
+  .containerInfoSalida{
+    display: flex;
+    padding-right: 4vh;     
+  }
+
+  .styleTextoKeySalida{
+    padding: 0.7vh;
+    font-weight: bolder;
+  }
+
+  .styleTextoValueSalida{
+    padding: 0.7vh;
+    font-style: oblique;
+    color: rgb(99, 98, 98);
   }
 
   

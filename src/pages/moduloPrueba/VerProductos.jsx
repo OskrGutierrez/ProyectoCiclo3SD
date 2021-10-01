@@ -1,6 +1,7 @@
 import BotonIngresoNN from "../../components/BotonIngresoNN";
 import BotonIngresoN from "../../components/BotonIngresoN";
 import {Link} from 'react-router-dom';
+import InfoSalida from "../../components/InfoSalida";
 
 
 function VerProducto() {
@@ -19,8 +20,19 @@ function VerProducto() {
                     </div>
                 </form>
 
+                <div className='mainContainerInfoSalida'>
+                    <InfoSalida textoKeySalida='ID del producto:' textoValueSalida='00000001'></InfoSalida> 
+                    <InfoSalida textoKeySalida='Nombre del producto:' textoValueSalida='Destornillado de 1/2"'></InfoSalida>
+                    <InfoSalida textoKeySalida='Fecha de ingreso:' textoValueSalida='01/10/2021'></InfoSalida>
+                    <InfoSalida textoKeySalida='Valor antes del IVA:' textoValueSalida='$8900.0'></InfoSalida>
+                </div>
+
                 <div className='containerBotonIngreso'>                    
                     <button>Lista Completa</button>                    
+                </div>
+
+                <div className='styleNotas'>
+                    NOTA: Cuando se de click en Lista Completa entonces, aquí se presentará una tabla
                 </div>
 
                 <div className='containerBotonIngreso'>
