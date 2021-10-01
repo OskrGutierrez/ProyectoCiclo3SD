@@ -29,10 +29,40 @@ input:focus{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.zonaVentas{
+.cabezaVentas{
     margin-inline: 5%;
     display: flex;
     justify-content: space-between;
     padding: 7px;
-    background-color: #FFA62B;
+    background-color: #2a9d8f;
+    border-radius: 10px;
+}
+
+.botones{
+    border: 0px;
+    padding: 12px 19px;
+    border-radius: 8px;
+    font-weight: bolder;
+    color: #000000;
+  }
+  .botones:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .botonventa{
+    background-color: #2A9D8F;
+    box-shadow: 5px 5px #E9C46A ;
+  }
+
+  .botonCancelar{
+    background-color: #E76F51;
+    box-shadow: 5px 5px #E9C46A ;
+  }
+
+.botonesVentas{
+    margin-inline: 25%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
 }

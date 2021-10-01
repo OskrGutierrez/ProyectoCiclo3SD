@@ -7,17 +7,30 @@ function NuevaVenta(){
                     NUEVA VENTA
                 </h1>
                 <ul className="cabezaVentas">
-                    <form action="">
-                        <span>CLIENTE</span>    
-                        <input type="text" defaultValue="Nombre Cliente" required />
-                        <span>CEDULA</span>
-                        <input type="number" max={12} efaultValue="Cedula Cliente" required/>
-                        <span>PRODUCTO</span>    
-                        <input type="text" defaultValue="Producto" required />
-                        <span>CANTIDAD</span>
-                        <input type="number" max={100} defaultValue="Cantidad" required/>
-                        <button type="submit">Agregar Producto</button>
-                    </form>     
+                    <div>
+                        <form action="">
+                            <span>CLIENTE</span>    
+                            <input type="text" defaultValue="Nombre Cliente" required />
+                            <span>CEDULA</span>
+                            <input type="number" defaultValue="0" required/>
+                            <span>PRODUCTO</span>    
+                            <input type="text" defaultValue="Producto" required />
+                            <span>CANTIDAD</span>
+                            <input type="number" max={100} defaultValue="0" required/>
+                            <br />
+                            <button className="botones" type="submit">Agregar Producto</button>
+                        </form>
+                    </div>
+                </ul>
+                <br />
+                <br />
+                <ul className="botonesVentas">
+                    <button className="botones botonventa">
+                        REALIZAR VENTA
+                    </button>
+                    <button className="botones botonCancelar">
+                        CANCELAR VENTA
+                    </button>
                 </ul>
             </>
     )
