@@ -4,7 +4,7 @@ function OpctionsProduct(props) {
     return (
 
         <li>
-            <Link to={props.productPage}>
+            <Link to={props.productPage} style={{ textDecoration: 'none' }}>        
                 <div className='opctionContainer'>
 
                     <div className='setupIconOP'>

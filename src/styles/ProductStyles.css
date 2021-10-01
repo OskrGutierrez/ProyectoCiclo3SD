@@ -1,7 +1,7 @@
 
 .productOpctionsContainer{
-    display: flex;
-    justify-content: space-between;  
+    display: flex; 
+    justify-content: space-between;    
     padding: 5vh;
   }
   
@@ -47,12 +47,30 @@
 
   .containerBotonIngreso{
     display:flex;    
-    padding: 3vh;
+    padding: 3vh;       
   }
 
-  .styleTextoInput{
-    padding-right: 4vh;
-    font-style: oblique;    
+  .styleTextoInput{    
+    font-style: oblique;
+    padding-right: 2vh;    
+  }
+
+  .espacioDerBotones{
+    padding-right: 3vh;
+  }
+
+  .styleBotonInput{
+    padding:0px;
+  }
+
+  .styleNotas{
+    padding: 3vh;
+    font-weight: bolder;
+  }
+
+  .styleMessage{
+    padding-left: 3vh;
+    font-weight: bolder;
   }
 
   
