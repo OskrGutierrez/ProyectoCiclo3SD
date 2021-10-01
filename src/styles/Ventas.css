@@ -4,7 +4,6 @@ form{
     justify-content: center;
     align-items: center;
 }
-
 input{
     padding: 5px;
     border-radius: 8px;
@@ -12,4 +11,20 @@ input{
 
 input:focus{
     border: 0px;
+}
+.Opciones{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 7px;
+}
+.botonOpcion{
+    height: 300px;
+}
+.botonOpcion:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.texto{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

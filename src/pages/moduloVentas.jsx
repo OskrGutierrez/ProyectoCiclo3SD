@@ -1,31 +1,30 @@
 import '../styles/Ventas.css';
+import imgNuevaVenta from '../media/IconoVenta.png';
+import imgBusquedaVenta from '../media/busquedaVentas.png';
 
 function ModuloVentas(){
     return (
             <>
-                <ul>
-                    <form action="">
-                        <input type="email" defaultValue="Ingrese su correo" required/>
-                        <input type="file" required/>
-                        <input type="number" max={100} required/>
-                        <input type="password" required />
-                        <input type="text" defaultValue="Ingrese su nombre" required />
-                        <select required name="" id="">
-                            <option disabled value="" >Seleccione una opcion</option>
-                            <option value="">OpcionA</option>
-                            <option value="">OpcionB</option>
-                            <option value="">OpcionC</option>
-                            <option value="">OpcionD</option>
-                        </select>
-                        <button type="submit">Submit</button>
-                    </form>
-                    <li>Este es el modulo de las ventas</li>
-                    <li>Este es el modulo de las ventas</li>
-                    <li>Este es el modulo de las ventas</li>
-                    <li>Este es el modulo de las ventas</li>
-                    <li>Este es el modulo de las ventas</li>
-                    <li>Este es el modulo de las ventas</li>
+            <br />
+            <br />
+            <br />
+                <ul className="Opciones">
+                    <li>
+                        <img className="botonOpcion" src={imgNuevaVenta} alt="Icono Nueva Venta" />
+                    </li>
+                    <li>
+                        <img className="botonOpcion" src={imgBusquedaVenta} alt="Icono gestionar ventas" />
+                    </li>
                 </ul>
+                <ul className="Opciones">
+                    <li className="texto">
+                        NUEVA VENTA
+                    </li>
+                    <li className="texto">
+                        BUSCAR Y MODIFICAR VENTAS
+                    </li>
+                </ul>
+
             </>
             
     )
