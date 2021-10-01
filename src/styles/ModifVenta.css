@@ -1,0 +1,11 @@
+
+.contenedorVenta{
+    display: flex;
+    justify-content: space-between;  
+    padding: 5vh;
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+}
