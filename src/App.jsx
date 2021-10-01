@@ -10,11 +10,11 @@ import Inicio from './pages/Inicio';
 import ModuloUsuarios from './pages/moduloUsuarios';
 import ModuloProductos from './pages/moduloProductos';
 import MainLayout from './layouts/MainLayout';
+import NuevaVenta from './pages/nuevaVenta';
 
 function App() {
   return (
     <div className="App">
-
       <Router>
         <MainLayout>
           <Switch>
@@ -29,6 +29,9 @@ function App() {
             </Route>
             <Route path="/moduloVentas">
               <ModuloVentas />
+            </Route>
+            <Route path="/nuevaVenta">
+              <NuevaVenta />
             </Route>
           </Switch>
         </MainLayout>

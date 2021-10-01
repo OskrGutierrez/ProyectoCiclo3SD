@@ -28,3 +28,11 @@ input:focus{
 .texto{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.zonaVentas{
+    margin-inline: 5%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    background-color: #FFA62B;
+}

@@ -5,9 +5,11 @@ import imgBusquedaVenta from '../media/busquedaVentas.png';
 function ModuloVentas(){
     return (
             <>
-            <br />
-            <br />
-            <br />
+                <div>
+                    <br />
+                    <br />
+                    <br />
+                </div>
                 <ul className="Opciones">
                     <li>
                         <img className="botonOpcion" src={imgNuevaVenta} alt="Icono Nueva Venta" />
