@@ -32,7 +32,7 @@ input:focus{
 .cabezaVentas{
     margin-inline: 5%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 7px;
     background-color: #2a9d8f;
     border-radius: 10px;
@@ -65,4 +65,10 @@ input:focus{
     display: flex;
     justify-content: space-between;
     padding: 7px;
+}
+.tablaNuevaVenta{
+  padding: 5%;
+}
+table{
+  border: red 3% solid;
 }
