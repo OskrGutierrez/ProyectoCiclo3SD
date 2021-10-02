@@ -68,14 +68,14 @@
 .espacio{
     width: 60%
 }
-.botones{
+.botonesHeader{
     width: 10%;
     text-align: left;
     font-size: medium;
     font-weight: lighter;
 }
 
-.botones:hover{
+.botonesHeader:hover{
     color: rgb(38, 70, 83);
     font-weight: 600;
     cursor: pointer;

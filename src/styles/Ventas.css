@@ -6,7 +6,8 @@ form{
 }
 input{
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border-color: white;
 }
 
 input:focus{
@@ -16,9 +17,10 @@ input:focus{
   display: flex;
   justify-content: space-evenly;
   padding: 7px;
+
 }
 .botonOpcion{
-    height: 300px;
+    height: 20vh;
 }
 .botonOpcion:hover{
     cursor: pointer;
@@ -26,7 +28,9 @@ input:focus{
 }
 
 .texto{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #264653;
+    margin-top: 20px;
+    text-align: center;
 }
 
 .cabezaVentas{
@@ -34,41 +38,63 @@ input:focus{
     display: flex;
     justify-content: space-evenly;
     padding: 7px;
-    background-color: #2a9d8f;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.27);
 }
 
 .botones{
     border: 0px;
-    padding: 12px 19px;
-    border-radius: 8px;
+    padding: 7px;
+    border-radius: 4px;
     font-weight: bolder;
-    color: #000000;
+    color: white;
+
+    font-size: 0.8rem;
+    background-color: #E76F51;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.27);
+    text-align: center;
   }
   .botones:hover{
     cursor: pointer;
-    transform: scale(1.1);
+    background-color: #F4A261;
+    color: black;
   }
   
-  .botonventa{
-    background-color: #2A9D8F;
-    box-shadow: 5px 5px #E9C46A ;
-  }
 
-  .botonCancelar{
-    background-color: #E76F51;
-    box-shadow: 5px 5px #E9C46A ;
-  }
 
 .botonesVentas{
-    margin-inline: 25%;
     display: flex;
-    justify-content: space-between;
-    padding: 7px;
+    justify-content: space-around;
+
 }
 .tablaNuevaVenta{
   padding: 5%;
 }
-table{
-  border: red 3% solid;
+
+.tituloVenta{
+  text-align: center;
+  color: #264653;
+}
+
+.iconosVentas{
+  font-size: 5rem;
+  color: #264653;
+}
+
+.menuVenta{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  border-radius: 4px;
+  height: 25vh;
+  width: 25vw;
+  padding: 25px;
+  box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.27);
+}
+
+.menuVenta:hover{
+  background-color: #F4A261
 }

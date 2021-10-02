@@ -4,6 +4,8 @@ import '../styles/Ventas.css';
 import imgNuevaVenta from '../media/IconoVenta.png';
 import imgBusquedaVenta from '../media/busquedaVentas.png';
 import {Link} from 'react-router-dom';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faMagnifyingGlass, faCashRegister} from '@fortawesome/free-solid-svg-icons'
 
 const moduloVentas = () => {
     return (
@@ -14,24 +16,21 @@ const moduloVentas = () => {
                     <br />
                     <br />
                 </div>
-                <ul className="Opciones">
-                <Link to='/NuevaVenta'>
-                    <li>
-                        <img className="botonOpcion" src={imgNuevaVenta} alt="Icono Nueva Venta" />
-                    </li>
-                </Link>
-                    <li>
-                        <img className="botonOpcion" src={imgBusquedaVenta} alt="Icono gestionar ventas" />
-                    </li>
-                </ul>
-                <ul className="Opciones">
-                    <li className="texto">
-                        NUEVA VENTA
-                    </li>
-                    <li className="texto">
-                        BUSCAR Y MODIFICAR VENTAS
-                    </li>
-                </ul>
+                <div className="Opciones">
+                    <Link to='/NuevaVenta'>
+                    <div className="menuVenta">
+                        <div><FontAwesomeIcon icon={faCashRegister} className="iconosVentas"/></div> 
+                        <div className="texto">NUEVA VENTA</div>                       
+                    </div>
+                    </Link>
+
+                    <Link to='/NuevaVenta'>
+                    <div className="menuVenta">
+                        <div><FontAwesomeIcon icon={faMagnifyingGlass} className="iconosVentas"/></div>
+                        <div className="texto">BUSCAR Y MODIFICAR VENTAS</div>
+                    </div>
+                    </Link>
+                </div>
 
             </>
         </Layout>

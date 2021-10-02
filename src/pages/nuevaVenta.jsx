@@ -1,11 +1,14 @@
 import '../styles/Ventas.css';
 import Layout from '../layouts/Layout';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBan, faPlus, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
+
 
 function NuevaVenta(){
     return (
            <Layout>
            <>
-                <h1 align="center">
+                <h1 className="tituloVenta">
                     NUEVA VENTA
                 </h1>
                 <ul className="cabezaVentas">
@@ -20,7 +23,7 @@ function NuevaVenta(){
                             <span>CANTIDAD</span>
                             <input type="number" max={100} defaultValue="0" required/>
                             <br />
-                            <button className="botones" type="submit">Agregar Producto</button>
+                            <button className="botones" type="submit"><FontAwesomeIcon icon={faPlus} />  Agregar Producto</button>
                         </form>
                     </div>
                     <div className="tablaNuevaVenta">
@@ -74,10 +77,10 @@ function NuevaVenta(){
                 <br />
                 <ul className="botonesVentas">
                     <button className="botones botonventa">
-                        REALIZAR VENTA
+                    <FontAwesomeIcon icon={faCircleCheck} /> REALIZAR VENTA
                     </button>
                     <button className="botones botonCancelar">
-                        CANCELAR VENTA
+                    <FontAwesomeIcon icon={faBan} /> CANCELAR VENTA
                     </button>
                 </ul>
             </>
