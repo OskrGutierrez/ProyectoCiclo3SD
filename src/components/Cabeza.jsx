@@ -1,44 +1,38 @@
-import '../styles/App.css';
-import logoEmpresa from '../media/logoVentas.png';
+import '../styles/header.css';
+import logo from '../media/SDblanco.png'
+import {Link} from 'react-router-dom'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
 
-function Cabeza(){
+
+const Cabeza = () =>{
     return(
-        <div>
-            <header>
-                <div>
-                    <ul className="navBar1">
-                        <li>
-                            <img className="logo" src={logoEmpresa} alt="LogoVentas"/>
-                        </li>
-                        <ul className="navBarinterno">
-                            <li className="navBarinterno">
-                                NOMBRE DE USUARIO 
-                                <br/>
-                                ROL
-                            </li>
-                            <li>
-                                <button className="button mainButton">SALIR</button>
-                            </li>
-                        </ul> 
-                
-                    </ul>
-                </div>
-                <div>
-                    <ul className="navBar2">
-                    <li>
-                            <button className="button secundaryButton">VENTAS</button>
-                        </li>
-                        <li>
-                            <button className="button secundaryButton">PRODUCTOS</button>
-                        </li>
-                        <li>
-                            <button className="button secundaryButton">USUARIOS</button>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-        </div>
-        
-    )
+        <header>
+          <div className="contHead">
+              <div className='logoB'>
+                  <img src={logo} alt="" className="imglog"/>
+              </div>
+              <div className='titulo'>
+                  <h2>NOMBRE DEL MÓDULO</h2>           
+              </div>
+              <div className='usuario'>
+                  <div className="nombre">NOMBRE USUARIO</div>
+                  <div className="rol">Tipo de Usuario</div>
+              </div>
+               <Link to='/'className='btnSalir'>
+                   <div ><FontAwesomeIcon icon={faRightFromBracket} /></div>
+               </Link>
+          </div>
+          <div className="navbar">
+              <div className="espacio"></div>
+              <Link to='/moduloUsuarios'><div className="botones">Usuarios</div></Link>
+              <Link to='/moduloProductos'><div className="botones">Productos</div></Link>
+              <Link to='/moduloVentas'><div className="botones">Ventas</div></Link>
+          </div>
+        </header>
+   
+           
+       )
 }
+
 export default Cabeza;

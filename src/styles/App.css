@@ -8,6 +8,16 @@ ul{
   color: #000000;
 }
 
+.containerLayout{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.containerLayout>main{
+  height: 100%;
+}
+
 .navBar1{
   display: flex;
   justify-content: space-between;
@@ -35,9 +45,7 @@ ul{
   padding: 0px;
 }
 
-.logo{
-  height: 40px;
-}
+
 
 .button{
   border: 0px;
@@ -60,7 +68,4 @@ ul{
   background-color: #EDE7E3;
   box-shadow: 2px 2px #82C0CC ;
 }
-.logo:hover{
-  cursor: pointer;
-  transform: scale(1.1);
-}
+

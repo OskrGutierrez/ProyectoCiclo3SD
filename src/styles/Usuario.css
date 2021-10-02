@@ -1,0 +1,86 @@
+body {
+  margin: 0px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.logo {
+  width: 60px;
+}
+
+.Button {
+  border: 0px;
+  padding: 5px 3px;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+.Button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.Button1 {
+  background-color: #ede7e3;
+  color: #16697a;
+  box-shadow: 1px 1px #489fb5;
+}
+
+.Button1:hover {
+  box-shadow: 2px 2px #489fb5;
+}
+
+.buscar1 {
+  border: 1px solid #489fb5;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: width;
+}
+
+.buscar1:focus-within {
+  border: 1px solid #ffa62b;
+}
+
+.buscar1 > input {
+  outline: none;
+  border: 0px;
+}
+
+.contenedor {
+  margin: 160px auto;
+  width: 600px;
+}
+
+table {
+  background-color: #ede7e3;
+  text-align: left;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: solid 1px #16697a;
+  padding: 5px;
+}
+
+tr:hover td {
+  background-color: #ffa62b;
+  color: antiquewhite;
+  cursor: pointer;
+}
+
+thead {
+  border-bottom: solid 5px #16697a;
+  background-color: #ffa62b;
+  color: #103e47;
+}

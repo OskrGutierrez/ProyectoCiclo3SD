@@ -1,0 +1,74 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    padding: 5px;
+    border-radius: 8px;
+}
+
+input:focus{
+    border: 0px;
+}
+.Opciones{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 7px;
+}
+.botonOpcion{
+    height: 300px;
+}
+.botonOpcion:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.texto{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cabezaVentas{
+    margin-inline: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 7px;
+    background-color: #2a9d8f;
+    border-radius: 10px;
+}
+
+.botones{
+    border: 0px;
+    padding: 12px 19px;
+    border-radius: 8px;
+    font-weight: bolder;
+    color: #000000;
+  }
+  .botones:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  .botonventa{
+    background-color: #2A9D8F;
+    box-shadow: 5px 5px #E9C46A ;
+  }
+
+  .botonCancelar{
+    background-color: #E76F51;
+    box-shadow: 5px 5px #E9C46A ;
+  }
+
+.botonesVentas{
+    margin-inline: 25%;
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+.tablaNuevaVenta{
+  padding: 5%;
+}
+table{
+  border: red 3% solid;
+}

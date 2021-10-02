@@ -1,11 +1,8 @@
-import React from 'react'
-import Layout from '../layouts/Layout'
 import "../styles/Usuario.css";
 
-const ModuloUsuarios = () => {
-    return (
-       <Layout>
-     <>
+function ModuloUsuarios() {
+  return (
+    <>
       <ul>
         <section>
           <ul className="navbar1">
@@ -83,9 +80,6 @@ const ModuloUsuarios = () => {
         </section>
       </ul>
     </>
-       </Layout>
-       
-    )
+  );
 }
-
 export default ModuloUsuarios;

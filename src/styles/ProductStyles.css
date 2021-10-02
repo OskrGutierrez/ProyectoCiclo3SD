@@ -1,0 +1,110 @@
+
+.productOpctionsContainer{
+    display: flex; 
+    justify-content: space-between;    
+    padding: 5vh;
+  }
+  
+  .opctionContainer{
+    margin: 10px;
+    background-color: rgb(141, 139, 139);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 4px 8px rgb(238, 235, 235);  
+    display: flex;
+  }
+  
+  .opctionContainer:hover{
+    cursor: pointer;
+    transform: scale(1.07);
+  }
+  
+  .mainTitle{
+    color: black;
+    font-size:6vh;
+    font-weight: bolder;
+    padding: 40px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  .secondaryTitle{
+    color:black;
+    font-size: 3vh;
+    font-style: oblique;
+    text-align: center;
+    padding: 3vh;
+    text-decoration-line:none;
+  }
+  
+  .setupIconOP{
+    color: black;
+    font-size: 4vh;  
+    padding: 3vh;
+    padding-right: 0vh;
+  }
+
+  .mainContainerBotonIngresoRegistrar{
+    display:flex;    
+    padding: 3vh;   
+    justify-content: space-between;
+  }
+
+  .containerBotonIngreso{
+    display:flex;    
+    padding: 3vh;   
+  }
+  .styleTextoInput{    
+    font-style: oblique;
+    padding-right: 2vh;     
+  }
+
+  .espacioDerBotones{
+    padding-right: 3vh;
+  }
+
+  .styleBotonInput{
+    padding:0px;
+    max-width: 140px;
+  }
+
+  .styleNotas{
+    padding: 3vh;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-weight: bolder;
+  }
+
+  .styleMessage{
+    padding-left: 3vh;
+    font-weight: bolder;
+  }
+
+  .mainContainerInfoSalida{
+    display:flex;        
+    justify-content: space-between;
+    padding: 8vh;
+    padding-top: 0vh;
+    padding-bottom: 3vh;
+
+  }
+
+  .containerInfoSalida{
+    display: flex;
+    padding-right: 4vh;     
+  }
+
+  .styleTextoKeySalida{
+    padding: 0.7vh;
+    font-weight: bolder;
+  }
+
+  .styleTextoValueSalida{
+    padding: 0.7vh;
+    font-style: oblique;
+    color: rgb(99, 98, 98);
+  }
+
+  
