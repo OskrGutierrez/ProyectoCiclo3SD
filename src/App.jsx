@@ -14,6 +14,7 @@ import Login from './pages/Login';
 import RegistroProducto from './pages/moduloPrueba/RegistrarProducto'
 import VisProductos from './pages/moduloPrueba/VerProductos';
 import ActProductos from './pages/moduloPrueba/ActualizarProductos';
+import ModifVenta from './pages/modifVenta';
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
 
             <Route path="/ActualizarProductos" exact>
               <ActProductos />              
+            </Route>
+            <Route path="/ModifVenta" exact>
+              <ModifVenta />              
             </Route>
             <Route path="/">
             <Login/>

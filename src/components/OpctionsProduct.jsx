@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 function OpctionsProduct(props) {
     return (
 
-        <li>
+        <div>
             <Link to={props.productPage} style={{ textDecoration: 'none' }}>        
                 <div className='opctionContainer'>
 
@@ -18,7 +18,7 @@ function OpctionsProduct(props) {
 
                 </div>
             </Link>
-        </li>
+        </div>
     )
 }
 export default OpctionsProduct;
