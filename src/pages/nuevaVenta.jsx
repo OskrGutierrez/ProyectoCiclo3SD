@@ -2,9 +2,21 @@ import '../styles/Ventas.css';
 import Layout from '../layouts/Layout';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBan, faPlus, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
+import react,{useEffect, useState} from "react";
 
 
 function NuevaVenta(){
+
+    const [nombreCliente,setnombreCliente] = useState("")
+
+    useEffect(()=>{
+        console.log("Hola, soy un use effect")
+      },[])
+
+    const cambioDeNombre = (e) => {
+        console.log(e.Target.defaultValue);
+    }
+
     return (
            <Layout>
            <>
@@ -15,7 +27,7 @@ function NuevaVenta(){
                     <div>
                         <form action="">
                             <span>CLIENTE</span>    
-                            <input type="text" defaultValue="Nombre Cliente" required />
+                            <input onChange={cambioDeNombre} type="text" defaultValue="Nombre Cliente" required />
                             <span>CEDULA</span>
                             <input type="number" defaultValue="0" required/>
                             <span>PRODUCTO</span>    
