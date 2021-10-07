@@ -1,11 +1,12 @@
 import react,{useEffect, useState} from "react";
 
-const Ventas = () => {
+const NuevaVenta = () => {
     return(
         <div>
             <h2>Pagina de administracion de vehiculos</h2>
             <button>Crear Nuevo Vehiculo</button>
             <TablaVentas></TablaVentas>
+            <FormNuevaVenta></FormNuevaVenta>
         </div>
     );
 };
@@ -16,10 +17,10 @@ const TablaVentas = ()=>{
     )
 }
 
-const TablaVentas = ()=>{
+const FormNuevaVenta = ()=>{
     return(
         <div>Esto es un formulario para crear nueva venta</div>
     )
 }
 
-export default Ventas;
+export default NuevaVenta;
