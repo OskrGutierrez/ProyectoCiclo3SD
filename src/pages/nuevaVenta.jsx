@@ -36,15 +36,19 @@ import {faBan, faPlus, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import React, {useEffect, useState, useRef} from "react";
 
 function NuevaVenta(){
-
-    useEffect(()=>{
-        console.log("Hola, osy un use Efect");
-    },[])
     /* const[ventas,setVentas]=useState({})
 
     useEffect (()=>{
         setVentas(ventasBackend)
     },[]) */
+    const[nombreCliente,setNombreCliente]=useState("");
+    const[cedula,setCedula]=useState("");
+    const[producto,setProducto]=useState("");
+    const[cantidad,setCantidad]=useState("");
+
+    const enviarDatosBackend=()=>{
+        console.log("El valor de la variable cliente es:",nombreCliente)
+    }
 
 
     const form = useRef(null);
@@ -68,19 +72,20 @@ function NuevaVenta(){
                     <div>
                         <form ref={form} onSubmit={submitForm} action="">
                             <span>CLIENTE</span>    
-                            <input onChange={(e)=>{console.log("Clietne: ",e.target.value)}} 
+                            <input onChange={(e)=>{setNombreCliente(e.target.value)}} 
                             name="CLIENTE" type="text" defaultValue="Nombre Cliente" required />
                             <span>CEDULA</span>
-                            <input onChange={(e)=>{console.log("cedula: ",e.target.value)}} 
+                            <input onChange={(e)=>{setCedula(e.target.value)}} 
                             name="CEDULA" type="number" defaultValue="0" required/>
                             <span>PRODUCTO</span>    
-                            <input onChange={(e)=>{console.log("producto: ",e.target.value)}} 
+                            <input onChange={(e)=>{setProducto("producto: ",e.target.value)}} 
                             name="PRODCUTO" type="text" defaultValue="Producto" required />
                             <span>CANTIDAD</span>
-                            <input onChange={(e)=>{console.log("cantidad ",e.target.value)}} 
+                            <input onChange={(e)=>{setCantidad("cantidad ",e.target.value)}} 
                             name="CANTIDAD" type="number" max={100} defaultValue="0" required/>
                             <br />
                             <button className="botones" type="submit"><FontAwesomeIcon icon={faPlus} />  Agregar Producto</button>
+                            <button onClick={enviarDatosBackend} className="botones"><FontAwesomeIcon icon={faPlus} />  AgregarLinea</button>
                         </form>
                     </div>
                     <div className="tablaNuevaVenta">
