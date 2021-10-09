@@ -40,20 +40,6 @@ function NuevaVenta(){
     useEffect(()=>{
         console.log("Hola, osy un use Efect");
     },[])
-
-    const cambioCliente=(e)=>{
-        console.log("Clietne: ",e.target.value)
-    }
-    const cambioCedula=(e)=>{
-        console.log("cedula: ",e.target.value)
-    }
-    const cambioProducto=(e)=>{
-        console.log("producto: ",e.target.value)
-    }
-    const cambioCantidad=(e)=>{
-        console.log("cantidad ",e.target.value)
-    }
-
     /* const[ventas,setVentas]=useState({})
 
     useEffect (()=>{
@@ -82,13 +68,17 @@ function NuevaVenta(){
                     <div>
                         <form ref={form} onSubmit={submitForm} action="">
                             <span>CLIENTE</span>    
-                            <input onChange={cambioCliente} name="CLIENTE" type="text" defaultValue="Nombre Cliente" required />
+                            <input onChange={(e)=>{console.log("Clietne: ",e.target.value)}} 
+                            name="CLIENTE" type="text" defaultValue="Nombre Cliente" required />
                             <span>CEDULA</span>
-                            <input onChange={cambioCedula} name="CEDULA" type="number" defaultValue="0" required/>
+                            <input onChange={(e)=>{console.log("cedula: ",e.target.value)}} 
+                            name="CEDULA" type="number" defaultValue="0" required/>
                             <span>PRODUCTO</span>    
-                            <input onChange={cambioProducto} name="PRODCUTO" type="text" defaultValue="Producto" required />
+                            <input onChange={(e)=>{console.log("producto: ",e.target.value)}} 
+                            name="PRODCUTO" type="text" defaultValue="Producto" required />
                             <span>CANTIDAD</span>
-                            <input onChange={cambioCantidad} name="CANTIDAD" type="number" max={100} defaultValue="0" required/>
+                            <input onChange={(e)=>{console.log("cantidad ",e.target.value)}} 
+                            name="CANTIDAD" type="number" max={100} defaultValue="0" required/>
                             <br />
                             <button className="botones" type="submit"><FontAwesomeIcon icon={faPlus} />  Agregar Producto</button>
                         </form>
