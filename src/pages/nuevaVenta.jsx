@@ -45,9 +45,12 @@ function NuevaVenta(){
     const[cedula,setCedula]=useState("");
     const[producto,setProducto]=useState("");
     const[cantidad,setCantidad]=useState("");
+    var numItem=0;
 
     const enviarDatosBackend=()=>{
         console.log("El valor de la variable cliente es:",nombreCliente)
+        numItem = numItem + 1;
+        console.log(numItem)
     }
 
 
@@ -61,7 +64,7 @@ function NuevaVenta(){
             nuevaVenta[key]=value;
         });
         console.log("Datos del form enviados",nuevaVenta);
-    };
+    }
     return (
            <Layout>
            <>
