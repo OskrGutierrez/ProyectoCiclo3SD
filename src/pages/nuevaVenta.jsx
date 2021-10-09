@@ -105,11 +105,47 @@ import Layout from '../layouts/Layout';
 import react,{useEffect, useState} from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBan, faPlus, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const VentaBackend=[
+    {
+        idVenta:"001",
+        valorTotalVenta:"10000",
+        producto:"dgfsd",
+        cantidad:"4",
+        precioUnit:"456",
+        fechaVenta:"1343542",
+        documentoCLiente:"4576834",
+        nombreCliente:"fdgtbdbd",
+        vendedor:"gjyuj",
+        estado:"aprobada"
+    },
+    {
+        idVenta:"002",
+        valorTotalVenta:"345000",
+        producto:"manzana",
+        cantidad:"6",
+        precioUnit:"8094",
+        fechaVenta:"546547",
+        documentoCLiente:"3542351",
+        nombreCliente:"maria",
+        vendedor:"Jose",
+        estado:"aprobada"
+    }
+]
 
 
 const NuevaVenta = () => {
     const [mostrarTabla,setMostrarTabla]=useState(true);
     const [textoBoton,setTextoBoton]=useState("Nueva Venta");
+    const [ventas,setVentas]=useState([]);
+    
+    useEffect(()=>{
+        //Obtener informacion desde el backend
+        setVentas(VentaBackend);
+    },[]);
+
 
     useEffect(()=>{
     if(mostrarTabla){
@@ -123,16 +159,19 @@ const NuevaVenta = () => {
         <Layout>
         <>
             <div>
-                <h2>Pagina de administracion de vehiculos</h2>
+                <h2>PAGINA ADMINISTRACION DE VENTAS</h2>
                 <button onClick={()=>{setMostrarTabla(!mostrarTabla);}}>{textoBoton}</button>
-                {mostrarTabla ?<TablaVentas/>:<FormNuevaVenta/>}
+                {mostrarTabla ?(<TablaVentas listaDeVentas={ventas}/>):(<FormNuevaVenta/>)}
             </div>
         </>
         </Layout>
     );
 };
 
-const TablaVentas = ()=>{
+const TablaVentas = ({listaDeVentas})=>{
+    useEffect(()=>{
+    console.log("Este es el estado de las ventas en el componente de tabla",listaDeVentas)
+    },[listaDeVentas]);
     return(
         <div>
         <section className = 'maincontainerVenta'>
@@ -212,7 +251,21 @@ const TablaVentas = ()=>{
     )
 }
 
+
+
 const FormNuevaVenta = ()=>{
+    const [cliente,setCliente]=useState();
+    const [cedula,setCedula]=useState();
+    const [producto,setProducto]=useState();
+    const [cantidad,setCantidad]=useState();
+
+    const enviarAlBackend=()=>{
+        console.log("cliente",cliente,"cedula",cedula,"producto",producto,"cantidad",cantidad);
+        toast.success('Venta realizada', {
+            position: "top-center",
+            autoClose: 5000,});
+    }
+
     return(
             <div>
                 <h1 className="tituloVenta">
@@ -222,15 +275,15 @@ const FormNuevaVenta = ()=>{
                     <div>
                         <form action="">
                             <span>CLIENTE</span>    
-                            <input type="text" defaultValue="Nombre Cliente" required />
+                            <input name="cliente" value={cliente} onChange={(e)=>{setCliente(e.target.value);}} type="text" defaultValue="Nombre Cliente" required />
                             <span>CEDULA</span>
-                            <input type="number" defaultValue="0" required/>
+                            <input name="cedula" value={cedula} onChange={(e)=>{setCedula(e.target.value);}} type="number" defaultValue="0" required/>
                             <span>PRODUCTO</span>    
-                            <input type="text" defaultValue="Producto" required />
+                            <input name="producto" value={producto} onChange={(e)=>{setProducto(e.target.value);}} type="text" defaultValue="Producto" required />
                             <span>CANTIDAD</span>
-                            <input type="number" max={100} defaultValue="0" required/>
+                            <input name="cantidad" value={cantidad} onChange={(e)=>{setCantidad(e.target.value);}} type="number" max={100} defaultValue="0" required/>
                             <br />
-                            <button className="botones" type="submit"><FontAwesomeIcon icon={faPlus} />  Agregar Producto</button>
+                            <button className="botones" type="button" onClick={()=>{enviarAlBackend()}}><FontAwesomeIcon icon={faPlus} />  Agregar Producto</button>
                         </form>
                     </div>
                     <div className="tablaNuevaVenta">
@@ -290,6 +343,7 @@ const FormNuevaVenta = ()=>{
                     <FontAwesomeIcon icon={faBan} /> CANCELAR VENTA
                     </button>
                 </ul>
+                <ToastContainer position="top-center" autoClose={5000}/>
             </div>
     )
 }
