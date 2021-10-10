@@ -35,7 +35,33 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBan, faPlus, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import React, {useEffect, useState, useRef} from "react";
 
-function NuevaVenta(){
+
+const ventasBackend=[
+    {
+        item:"1",
+        producto:"manzana",
+        cantidad:"3",
+        preciouni:"100",
+        subtotal:"300",
+    },
+    {
+        item:"2",
+        producto:"pera",
+        cantidad:"2",
+        preciouni:"200",
+        subtotal:"400",
+    },
+    {
+        item:"3",
+        producto:"coco",
+        cantidad:"1",
+        preciouni:"1000",
+        subtotal:"1000",
+    },
+];
+
+
+const NuevaVenta=()=>{
     /* const[ventas,setVentas]=useState({})
 
     useEffect (()=>{
@@ -45,13 +71,19 @@ function NuevaVenta(){
     const[cedula,setCedula]=useState("");
     const[producto,setProducto]=useState("");
     const[cantidad,setCantidad]=useState("");
+    const[ventas,setVentas]=useState([]);
+
     var numItem=0;
 
     const enviarDatosBackend=()=>{
-        console.log("El valor de la variable cliente es:",nombreCliente)
         numItem = numItem + 1;
         console.log(numItem)
     }
+
+    useEffect(() => {
+         //obtener lista de vehiculos desde el backend
+        setVentas(ventasBackend);
+    }, []);
 
 
     const form = useRef(null);
@@ -91,7 +123,29 @@ function NuevaVenta(){
                             <button onClick={enviarDatosBackend} className="botones"><FontAwesomeIcon icon={faPlus} />  AgregarLinea</button>
                         </form>
                     </div>
-                    <div className="tablaNuevaVenta">
+                    <TablaPrueba listaVenta={ventas}/> 
+                </ul>
+                <br />
+                <br />
+                <ul className="botonesVentas">
+                    <button onClick={enviarDatosBackend} className="botones botonventa">
+                    <FontAwesomeIcon icon={faCircleCheck} /> REALIZAR VENTA
+                    </button>
+                    <button className="botones botonCancelar">
+                    <FontAwesomeIcon icon={faBan} /> CANCELAR VENTA
+                    </button>
+                </ul>
+                
+            </>
+    </Layout>
+    )
+}
+
+const TablaPrueba=({listaVenta})=>{
+    useEffect(() => {
+        console.log ("Este es el listado de vehiculos en el componente de tabla",listaVenta)
+    }, [listaVenta])
+    return <div className="tablaNuevaVenta">
                         <table>
                             <tr>
                                 <th>ITEM</th>
@@ -100,58 +154,21 @@ function NuevaVenta(){
                                 <th>PRECIO UNIDAD</th>
                                 <th>SUB-TOTAL</th>
                             </tr>
-                            <tr>
-                                <th>001</th>
-                                <th>LECHE</th>
-                                <th>2</th>
-                                <th>2800</th>
-                                <th>5600</th>
-                            </tr>
-                            <tr>
-                                <th>002</th>
-                                <th>HUEVOS</th>
-                                <th>12</th>
-                                <th>300</th>
-                                <th>3600</th>
-                            </tr>
-                            <tr>
-                                <th>003</th>
-                                <th>AZUCAR</th>
-                                <th>1</th>
-                                <th>3000</th>
-                                <th>3000</th>
-                            </tr>
-                            <tr>
-                                <th>004</th>
-                                <th>MANZANA</th>
-                                <th>2</th>
-                                <th>1000</th>
-                                <th>2000</th>
-                            </tr>
-                            <tr>
-                                <th>005</th>
-                                <th>NARANJA</th>
-                                <th>4</th>
-                                <th>800</th>
-                                <th>3200</th>
-                            </tr>
+                            {listaVenta.map((ventas)=>{
+                                return(
+                                    <tr>
+                                        <th>{ventas.item}</th>
+                                        <th>{ventas.producto}</th>
+                                        <th>{ventas.cantidad}</th>
+                                        <th>{ventas.preciouni}</th>
+                                        <th>{ventas.subtotal}</th>
+                                    </tr>
+                                    );
+                            })}
                         </table>
-                    </div>
-                </ul>
-                <br />
-                <br />
-                <ul className="botonesVentas">
-                    <button className="botones botonventa">
-                    <FontAwesomeIcon icon={faCircleCheck} /> REALIZAR VENTA
-                    </button>
-                    <button className="botones botonCancelar">
-                    <FontAwesomeIcon icon={faBan} /> CANCELAR VENTA
-                    </button>
-                </ul>
-            </>
-    </Layout>
-    )
+                    </div>;
 }
+
 
 export default NuevaVenta;
 
