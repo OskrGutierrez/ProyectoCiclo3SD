@@ -34,6 +34,8 @@ import Layout from '../layouts/Layout';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faBan, faPlus, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import React, {useEffect, useState, useRef} from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ventasBackend=[
@@ -79,6 +81,8 @@ const NuevaVenta=()=>{
         setVentas(ventasBackend);
     }, []);
 
+    
+    
 
     const form = useRef(null);
 
@@ -92,6 +96,7 @@ const NuevaVenta=()=>{
         numItem = numItem + 1;
         console.log(numItem)
         console.log("Datos del form enviados",nuevaVenta);
+        toast.success('Datos almacenados', {position: "top-right",autoClose: 3000,});     
     }
     return (
            <Layout>
@@ -130,8 +135,8 @@ const NuevaVenta=()=>{
                     <FontAwesomeIcon icon={faBan} /> CANCELAR VENTA
                     </button>
                 </ul>
-                
             </>
+            <ToastContainer position="top-right" autoClose={3000}/>
     </Layout>
     )
 }
