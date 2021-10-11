@@ -74,12 +74,6 @@ const NuevaVenta=()=>{
     const[ventas,setVentas]=useState([]);
 
     var numItem=0;
-
-    const enviarDatosBackend=()=>{
-        numItem = numItem + 1;
-        console.log(numItem)
-    }
-
     useEffect(() => {
          //obtener lista de vehiculos desde el backend
         setVentas(ventasBackend);
@@ -95,6 +89,8 @@ const NuevaVenta=()=>{
         fd.forEach((value,key)=>{
             nuevaVenta[key]=value;
         });
+        numItem = numItem + 1;
+        console.log(numItem)
         console.log("Datos del form enviados",nuevaVenta);
     }
     return (
@@ -120,7 +116,6 @@ const NuevaVenta=()=>{
                             name="CANTIDAD" type="number" max={100} defaultValue="0" required/>
                             <br />
                             <button className="botones" type="submit"><FontAwesomeIcon icon={faPlus} />  Agregar Producto</button>
-                            <button onClick={enviarDatosBackend} className="botones"><FontAwesomeIcon icon={faPlus} />  AgregarLinea</button>
                         </form>
                     </div>
                     <TablaPrueba listaVenta={ventas}/> 
@@ -128,7 +123,7 @@ const NuevaVenta=()=>{
                 <br />
                 <br />
                 <ul className="botonesVentas">
-                    <button onClick={enviarDatosBackend} className="botones botonventa">
+                    <button onClick={submitForm} className="botones botonventa">
                     <FontAwesomeIcon icon={faCircleCheck} /> REALIZAR VENTA
                     </button>
                     <button className="botones botonCancelar">
