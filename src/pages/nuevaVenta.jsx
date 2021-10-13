@@ -96,7 +96,10 @@ const NuevaVenta=()=>{
         numItem = numItem + 1;
         console.log(numItem)
         console.log("Datos del form enviados",nuevaVenta);
-        toast.success('Datos almacenados', {position: "top-right",autoClose: 3000,});     
+        //identificar el caso de exito y mostrar exito
+        toast.success('Datos almacenados', {position: "top-right",autoClose: 3000,});
+        //identificar el caso de exito y mostrar el error
+        //toast.error('Fallo en el envio de datos', {position: "top-right",autoClose: 3000,});
     }
     return (
            <Layout>
