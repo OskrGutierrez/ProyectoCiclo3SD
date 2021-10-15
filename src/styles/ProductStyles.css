@@ -1,8 +1,10 @@
 
-.productOpctionsContainer{
+ .productOpctionsContainer{
     display: flex; 
-    justify-content: space-between;    
-    padding: 5vh;
+    align-items: unset;  
+    justify-content: space-between; 
+    padding: 0vh;  
+        
   }
   
   .opctionContainer{
@@ -54,11 +56,11 @@
 
   .containerBotonIngreso{
     display:flex;    
-    padding: 3vh;   
+    padding: 2vh;       
   }
   .styleTextoInput{    
     font-style: oblique;
-    padding-right: 2vh;     
+    padding-right: 1vh;     
   }
 
   .espacioDerBotones{
@@ -73,7 +75,7 @@
   .styleNotas{
     padding: 3vh;
     padding-top: 1px;
-    padding-bottom: 1px;
+    padding-bottom: 50px;
     font-weight: bolder;
   }
 
@@ -105,6 +107,19 @@
     padding: 0.7vh;
     font-style: oblique;
     color: rgb(99, 98, 98);
+  }
+
+  .propTabla{
+    padding-left: 20vh;    
+    padding-right: 20vh;
+    padding-bottom: 5vh;    
+  }
+
+  .tableTitle{
+    color: #264653;
+    font-size:4vh;
+    font-weight: bolder;        
+    text-align: center;
   }
 
   
