@@ -36,32 +36,7 @@ import {faBan, faPlus, faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import React, {useEffect, useState, useRef} from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-
-const ventasBackend=[
-    {
-        item:"1",
-        producto:"manzana",
-        cantidad:"3",
-        preciouni:"100",
-        subtotal:"300",
-    },
-    {
-        item:"2",
-        producto:"pera",
-        cantidad:"2",
-        preciouni:"200",
-        subtotal:"400",
-    },
-    {
-        item:"3",
-        producto:"coco",
-        cantidad:"1",
-        preciouni:"1000",
-        subtotal:"1000",
-    },
-];
-
+import axios from 'axios';
 
 const NuevaVenta=()=>{
     /* const[ventas,setVentas]=useState({})
@@ -77,12 +52,20 @@ const NuevaVenta=()=>{
 
     var numItem=0;
     useEffect(() => {
-         //obtener lista de vehiculos desde el backend
-        setVentas(ventasBackend);
+        var config = {
+            method: 'get',
+            url: 'http://localhost:3001/api/producto\n',
+            headers: { }
+          };
+          
+          axios(config)
+          .then(function (response) {
+            setVentas(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }, []);
-
-    
-    
 
     const form = useRef(null);
 
@@ -91,13 +74,30 @@ const NuevaVenta=()=>{
         const fd = new FormData(form.current);
         const nuevaVenta = {};
         fd.forEach((value,key)=>{
-            nuevaVenta[key]=value;
+            nuevaVenta[key]=value;  
         });
+
+        const config = {
+            method: 'post',
+            url: 'http://localhost:3001/api/producto\n',
+            headers: { },
+            data:{cliente:nuevaVenta.CLIENTE,cedula:nuevaVenta.CEDULA,producto:nuevaVenta.PRODUCTO,cantidad:nuevaVenta.CANTIDAD},
+          };
+        
+          await axios(config)
+          .then(function (response) {
+            console.log(JSON.stringify(response.data));
+            toast.success('Datos almacenados', {position: "top-right",autoClose: 3000,});
+          })
+          .catch(function (error) {
+            console.log(error);
+            toast.error('Error al almacenar los datos', {position: "top-right",autoClose: 3000,});
+          });  
+
         numItem = numItem + 1;
         console.log(numItem)
-        console.log("Datos del form enviados",nuevaVenta);
         //identificar el caso de exito y mostrar exito
-        toast.success('Datos almacenados', {position: "top-right",autoClose: 3000,});
+        
         //identificar el caso de exito y mostrar el error
         //toast.error('Fallo en el envio de datos', {position: "top-right",autoClose: 3000,});
     }
@@ -118,7 +118,7 @@ const NuevaVenta=()=>{
                             name="CEDULA" type="number" defaultValue="0" required/>
                             <span>PRODUCTO</span>    
                             <input onChange={(e)=>{setProducto("producto: ",e.target.value)}} 
-                            name="PRODCUTO" type="text" defaultValue="Producto" required />
+                            name="PRODUCTO" type="text" defaultValue="Producto" required />
                             <span>CANTIDAD</span>
                             <input onChange={(e)=>{setCantidad("cantidad ",e.target.value)}} 
                             name="CANTIDAD" type="number" max={100} defaultValue="0" required/>
