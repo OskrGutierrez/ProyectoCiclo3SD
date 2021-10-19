@@ -19,8 +19,9 @@ ul {
 }
 
 .Button {
+  margin-inline-end: 10px;
   border: 0px;
-  padding: 5px 3px;
+  padding: 7px 3px;
   border-radius: 10px;
   font-weight: bolder;
 }
@@ -36,18 +37,32 @@ ul {
 }
 
 .Button1:hover {
-  box-shadow: 2px 2px #489fb5;
+  box-shadow: 1px 1px #ffa62b;
+}
+
+.head1 {
+  margin: 15px;
+  text-align: right;
+}
+
+.head1 li {
+  display: inline;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px;
 }
 
 .buscar1 {
+  display: flex;
+  justify-content: center;
   border: 1px solid #489fb5;
-  padding: 4px;
+  padding: 5px;
   border-radius: 10px;
   background-color: width;
 }
 
 .buscar1:focus-within {
-  border: 1px solid #ffa62b;
+  border: 1.5px solid #ffa62b;
 }
 
 .buscar1 > input {
@@ -56,8 +71,8 @@ ul {
 }
 
 .contenedor {
-  margin: 160px auto;
-  width: 600px;
+  margin: 10px auto;
+  width: 1000px;
 }
 
 table {
