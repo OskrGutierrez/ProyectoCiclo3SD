@@ -5,15 +5,12 @@ import {
   Switch,
   Route, 
 } from "react-router-dom";
-import ModuloVentas from './pages/moduloVentas';
-import ModuloUsuarios from './pages/moduloUsuarios';
 import ModuloProductos from './pages/moduloProductos';
-import NuevaVenta from './pages/nuevaVenta';
 import Login from './pages/Login';
-import RegistroProducto from './pages/moduloPrueba/RegistrarProducto'
-import VisProductos from './pages/moduloPrueba/VerProductos';
-import ActProductos from './pages/moduloPrueba/ActualizarProductos';
-import ModifVenta from './pages/modifVenta';
+import RegistroProducto from './pages/moduloProductos/RegistrarProducto'
+import VisProductos from './pages/moduloProductos/VerProductos';
+
+
 
 function App() {
   return (
@@ -23,15 +20,8 @@ function App() {
             <Route path="/moduloProductos">
               <ModuloProductos/>
             </Route>
-            <Route path="/moduloUsuarios">
-              <ModuloUsuarios/>
-            </Route>
-            <Route path="/moduloVentas">
-              <ModuloVentas/>
-            </Route>
-            <Route path="/NuevaVenta">
-              <NuevaVenta/>
-            </Route>
+            
+            
             <Route path="/RegistrarProducto" exact>
               <RegistroProducto />              
             </Route>  
@@ -40,12 +30,8 @@ function App() {
               <VisProductos />              
             </Route>     
 
-            <Route path="/ActualizarProductos" exact>
-              <ActProductos />              
-            </Route>
-            <Route path="/ModifVenta" exact>
-              <ModifVenta />              
-            </Route>
+            
+            
             <Route path="/">
             <Login/>
             </Route>

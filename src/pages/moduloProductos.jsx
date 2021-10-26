@@ -9,11 +9,11 @@ const ModuloProductos = () => {
     <Layout>
     <>
             <div className='mainTitle'>Qué acción desea realizar?</div>
-            <ul className='routesProductOpctionsContainer'>                              
+            <div className='routesProductOpctionsContainer'>                              
                 <OpctionsProduct secondTitle='Registrar Nuevo Producto' iconOP='fas fa-plus' productPage='RegistrarProducto'/>         
                 <OpctionsProduct secondTitle='Ver y Actualizar Información de Productos Registrados' iconOP='fas fa-edit' productPage='VerProductos'/>
                 
-            </ul>
+            </div>
         </>  
     </Layout>
 

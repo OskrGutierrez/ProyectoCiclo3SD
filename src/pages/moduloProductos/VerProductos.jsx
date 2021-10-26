@@ -1,6 +1,6 @@
 import BotonIngresoNNFiltro from "../../components/BotonIngresoNNFiltro";
 import {Link} from 'react-router-dom';
-import Layout from "../../layouts/Layout";
+import LayoutVer from "../../layouts/LayoutVer";
 import '../../styles/ProductStyles.css';
 import React, {useState, useEffect} from "react";
 import axios from "axios";
@@ -32,10 +32,10 @@ function VerProducto() {
                 }).catch(function (error) {
                     console.error(error);
                 });
+                setEjecutarConsulta(false)
         }
         if (ejecutarConsulta){            
-            obtenerProductos()
-            setEjecutarConsulta(false)
+            obtenerProductos()            
         }    
     }, [ejecutarConsulta])
 
@@ -43,46 +43,50 @@ function VerProducto() {
         if (mostrarTablaCompleta) {
             setEjecutarConsulta(true)            
         }
-    }, [mostrarTablaCompleta,ejecutarConsulta])   
+    }, [mostrarTablaCompleta])   
 
     return (
-        <Layout>
+
+        <LayoutVer>
             <div>
                 <h1 className='mainTitle'>Visualización y actualización de información de los productos!</h1>
-                <div className='styleMessageFiltro'>
-                    NOTA: Filtre por nRef, por Nombre, por Fecha de ingreso o por Precio antes del IVA:
-                </div>
-                <div className='.productOpctionsContainer'>
+                <div>
+                    <form >
+                        <div className='styleMessageFiltro'>
+                            NOTA: Filtre por nRef, por Nombre, por Fecha de ingreso o por Precio antes del IVA:
+                        </div>
+                        <div className='productOpctionsContainer'>
 
-                    <div className='mainContainerVerProductos'>
-                        <form >
-                            <div className='mainContainerBotonIngresoRegistrar'>                                                                
-                                <div>
-                                    <BotonIngresoNNFiltro nameButton='Nombre del producto:' typeInputButton='text' vValue={busqueda} vOnChange={e=>setBusqueda(e.target.value)}/>
-                                </div>                          
+                            <div className='mainContainerVerProductos'>
+
+                                <div className='mainContainerBotonIngresoRegistrar'>
+                                    <div>
+                                        <BotonIngresoNNFiltro nameButton='Ingrese valor del campo:' typeInputButton='text' vValue={busqueda} vOnChange={e => setBusqueda(e.target.value)} />
+                                    </div>
+                                </div>
+
                             </div>
-                        </form>                                              
-                    </div>                                    
 
-                    <div className='containerBotonIngreso'>
-                        <Link to='moduloProductos'>
-                            <button >Atrás</button>                            
-                        </Link>                        
-                    </div>                    
-                        {mostrarTablaCompleta && <TablaCompletaProductos listaproductosCompleta={productos} setEjecutarConsulta={setEjecutarConsulta} busqueda={busqueda} />} 
-                        
-                                                                  
+                            <div className='containerBotonIngreso'>
+                                <Link to='moduloProductos'>
+                                    <button >Atrás</button>
+                                </Link>
+                            </div>
+                            <div>
+                                {mostrarTablaCompleta && <TablaCompletaProductos listaproductosCompleta={productos} setEjecutarConsulta={setEjecutarConsulta} busqueda={busqueda} />}
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </Layout>
-
+        </LayoutVer>
     )
 }
 
 
 const TablaCompletaProductos = ({listaproductosCompleta, setEjecutarConsulta, busqueda}) => {
     
-    const [listaFiltrada, setListaFiltrada] = useState([listaproductosCompleta])    
+    const [listaFiltrada, setListaFiltrada] = useState(listaproductosCompleta)    
     
     
     //Filtro por cualquier valor de cualquier key de cualquier producto
@@ -91,14 +95,37 @@ const TablaCompletaProductos = ({listaproductosCompleta, setEjecutarConsulta, bu
             return JSON.stringify(elemento).toLowerCase().includes(busqueda.toLowerCase()) //JSON.stringify(elemento).includes(busqueda)
             //elementonRef.nRef.toLowerCase().includes(busquedanRef.toLowerCase())
         }))
-    }, [busqueda, listaproductosCompleta])
+    }, [busqueda, listaproductosCompleta])    
 
-    useEffect(()=>{
-        //console.log('Este es el listado de los productos', listaproductosCompleta) 
-        setEjecutarConsulta(true)       
-    },[listaproductosCompleta]) 
+    return (
+        <div  className='propContainerTable' >
+            <h2 className='tableTitle'>Los productos registrados en la base de datos son:</h2>           
+            <table >
+                <thead className='headTable propTable'>
+                    <tr>
+                        <th >nRef</th> 
+                        <th >Nombre</th>
+                        <th >Fecha de ingreso</th>
+                        <th >Precio antes del IVA</th>
+                        <th >Acciones</th>
+                        
+                    </tr>
+                </thead>
 
-    const FilaProducto = ({Pi, setEjecutarConsulta}) => {
+                <tbody>
+                    {listaFiltrada.map((Pi) => {
+                        return (
+                            <FilaProducto  Pi={Pi} setEjecutarConsulta={setEjecutarConsulta}/>
+                        )
+                    })}
+                </tbody>
+            </table>    
+            <ToastContainer position='bottom-center' autoClose={3000}/>                   
+        </div>
+    )
+}
+
+const FilaProducto = ({Pi, setEjecutarConsulta}) => {
         //console.log('Producto', Pi)
         
         const [edit, setEdit] = useState(false) 
@@ -249,34 +276,6 @@ const TablaCompletaProductos = ({listaproductosCompleta, setEjecutarConsulta, bu
             </tr>
         )
     }
-
-    return (
-        <div  className='propContainerTable' >
-            <h2 className='tableTitle'>Los productos registrados en la base de datos son:</h2>           
-            <table >
-                <thead className='headTable propTable'>
-                    <tr>
-                        <th >nRef</th> 
-                        <th >Nombre</th>
-                        <th >Fecha de ingreso</th>
-                        <th >Precio antes del IVA</th>
-                        <th >Acciones</th>
-                        
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {listaFiltrada.map((Pi) => {
-                        return (
-                            <FilaProducto  Pi={Pi} setEjecutarConsulta={setEjecutarConsulta}/>
-                        )
-                    })}
-                </tbody>
-            </table>    
-            <ToastContainer position='bottom-center' autoClose={3000}/>                   
-        </div>
-    )
-}
 
 export default VerProducto;
 

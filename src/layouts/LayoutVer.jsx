@@ -2,14 +2,14 @@ import React from 'react'
 import Cabeza from '../components/Cabeza'
 import Footer from '../components/Footer'
 
-const Layout = ({children}) => {
+const LayoutVer = ({children}) => {
     return (
-        <div className='containerLayout'>
+        <div className='containerLayoutVer'>
             <Cabeza></Cabeza>
-            <main className='containerMainScroll'>{children}</main>
+            <main className='containerMain'>{children}</main>
             <Footer></Footer>            
         </div>
     )
 }
 
-export default Layout
+export default LayoutVer

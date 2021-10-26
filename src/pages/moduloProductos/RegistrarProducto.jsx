@@ -53,7 +53,7 @@ function RegistrarProducto() {
 
     return (
         <Layout>
-            <div>
+            <div >
                 <h1 className='mainTitle'>Ingrese información del producto, luego click en Ingresar Producto!</h1>
                 <div >
                     <form ref={form} onSubmit={submitForm} className='productOpctionsContainer'>                        
@@ -99,9 +99,7 @@ function RegistrarProducto() {
                         <div >
                             {mostrarTablaIngresados && <TablaProductosIngresados listaProductosIngresados={productosIngresados}/> }                                                                                 
                         </div>                                              
-                    </form>
-
-                                       
+                    </form>                                      
                 </div>
             </div>
         </Layout>
