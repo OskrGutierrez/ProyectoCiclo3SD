@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-function VerProducto() {
+function VerUsuario() {
     const [productos, setProductos] = useState([])
     const [mostrarTablaCompleta, setMostrarTablaCompleta] = useState(true)
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true)    
@@ -23,7 +23,7 @@ function VerProducto() {
 
     useEffect(() => { 
         const obtenerProductos = async () => {
-            const options = { method: 'GET', url: 'http://localhost:5050/VerProductos' };
+            const options = { method: 'GET', url: 'http://localhost:5050/VerUsuarios' };
             await axios
                 .request(options)
                 .then(function (response) {
@@ -49,11 +49,11 @@ function VerProducto() {
 
         <LayoutVer>
             <div>
-                <h1 className='mainTitle'>Visualización y actualización de información de los productos!</h1>
+                <h1 className='mainTitle'>Visualización y actualización de información de los usuarios!</h1>
                 <div>
                     <form >
                         <div className='styleMessageFiltro'>
-                            NOTA: Filtre por nRef, por Nombre, por Fecha de ingreso o por Precio antes del IVA:
+                            NOTA: Filtre por código/Cc., por Nombre, por Correo, por Fecha de ingreso o por Perfil:
                         </div>
                         <div className='productOpctionsContainer'>
 
@@ -68,7 +68,7 @@ function VerProducto() {
                             </div>
 
                             <div className='containerBotonIngreso'>
-                                <Link to='mainModuloProductos'>
+                                <Link to='mainModuloUsuarios'>
                                     <button >Atrás</button>
                                 </Link>
                             </div>
@@ -99,14 +99,15 @@ const TablaCompletaProductos = ({listaproductosCompleta, setEjecutarConsulta, bu
 
     return (
         <div  className='propContainerTable' >
-            <h2 className='tableTitle'>Los productos registrados en la base de datos son:</h2>           
+            <h2 className='tableTitle'>Los usuarios registrados en la base de datos son:</h2>           
             <table >
                 <thead className='headTable propTable'>
                     <tr>
-                        <th >nRef</th> 
-                        <th >Nombre</th>
+                        <th >Código/Cc.</th> 
+                        <th >Nombres/apellido</th>
+                        <th >Correo de contacto</th>
                         <th >Fecha de ingreso</th>
-                        <th >Precio antes del IVA</th>
+                        <th >Perfil</th>
                         <th >Acciones</th>
                         
                     </tr>
@@ -132,17 +133,18 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
         const [openDialog, setOpenDialog] = useState(false);        
         const [infoNuevoProducto, setInfoNuevoProducto] = useState({                       
             _id:Pi.id,
-            nRef: Pi.nRef,    
+            codigo: Pi.codigo,    
             nombre: Pi.nombre,
+            correo: Pi.correo,
             fechaIngreso: Pi.fechaIngreso,
-            precioAntesIVA: Pi.precioAntesIVA,
+            perfil: Pi.perfil,
         })
     
         const actualizarProducto = async() =>{
             console.log('Se actualizó y se envió a la BD',infoNuevoProducto)
             const options = {
                 method: 'PATCH',
-                url: 'http://localhost:5050/EditarProducto',
+                url: 'http://localhost:5050/EditarUsuario',
                 headers: {'Content-Type': 'application/json'},
                 data: {...infoNuevoProducto, id : Pi._id}
               };
@@ -165,7 +167,7 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
 
             const options = {
                 method: 'DELETE',
-                url: 'http://localhost:5050/EliminarProducto',
+                url: 'http://localhost:5050/EliminarUsuario',
                 headers: {'Content-Type': 'application/json'},
                 data: { id : Pi._id}
               };
@@ -189,8 +191,8 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
                         <td>
                             <input 
                             type='text' 
-                            value={infoNuevoProducto.nRef} 
-                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, nRef: e.target.value})}/>
+                            value={infoNuevoProducto.codigo} 
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, codigo: e.target.value})}/>
                         </td>
                         <td>
                             <input 
@@ -200,24 +202,31 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
                         </td>
                         <td>
                             <input 
+                            type='email' 
+                            value={infoNuevoProducto.correo}
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, correo: e.target.value})}/>
+                        </td>
+                        <td>
+                            <input 
                             type='date' 
                             value={infoNuevoProducto.fechaIngreso}
                             onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, fechaIngreso: e.target.value})}/>
                         </td>
                         <td>
                             <input 
-                            type='number' 
-                            value={infoNuevoProducto.precioAntesIVA}
-                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, precioAntesIVA: e.target.value})}/>                            
+                            type='ntext' 
+                            value={infoNuevoProducto.perfil}
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, perfil: e.target.value})}/>                            
                         </td>
                     </>
 
                 ) : (
                     <>
-                        <td>{Pi.nRef}</td>
+                        <td>{Pi.codigo}</td>
                         <td>{Pi.nombre}</td>
+                        <td>{Pi.correo}</td>
                         <td>{Pi.fechaIngreso}</td>
-                        <td>${Pi.precioAntesIVA}</td>
+                        <td>{Pi.perfil}</td>
                     </>
                 )}
 
@@ -277,4 +286,4 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
         )
     }
 
-export default VerProducto;
+export default VerUsuario;

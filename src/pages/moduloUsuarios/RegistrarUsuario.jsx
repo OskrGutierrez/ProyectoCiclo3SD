@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
 
-function RegistrarProducto() {
+function RegistrarUsuario() {
 
     const [mostrarTablaIngresados, setMostrarTablaIngresados] = useState(false)    
     const [usuariosIngresados, setusuariosIngresados] = useState([])    
@@ -36,7 +36,7 @@ function RegistrarProducto() {
                 nombre: nuevoUsuario.nombre,
                 correo: nuevoUsuario.correo,
                 fechaIngreso: nuevoUsuario.fechaIngreso,
-                estado: nuevoUsuario.estado
+                perfil: nuevoUsuario.perfil
             }
         };
 
@@ -85,8 +85,8 @@ function RegistrarProducto() {
                                 styleBoton='styleBotonInput2' />
 
                             <BotonIngresoN
-                                nameButton='Estado:'
-                                labelName='estado'
+                                nameButton='Perfil:'
+                                labelName='perfil'
                                 typeInputButton='text'
                                 styleBoton='styleBotonInput2' />
                         </div>
@@ -98,7 +98,7 @@ function RegistrarProducto() {
                                 </div>
                             </div>  
                             <div className='containerBotonIngreso'>
-                                <Link to='mainModuloProductos'>
+                                <Link to='mainModuloUsuarios'>
                                     <button>Atrás</button>
                                 </Link>
                             </div>
@@ -128,7 +128,7 @@ const TablausuariosIngresados = ({listausuariosIngresados}) => {
                         <th >Nombres/apellidos</th>
                         <th >Correo de contacto</th>
                         <th >Fecha de ingreso</th>
-                        <th >Estado</th>                   
+                        <th >Perfil</th>                   
                     </tr>
                 </thead>
 
@@ -140,7 +140,7 @@ const TablausuariosIngresados = ({listausuariosIngresados}) => {
                                 <td>{Ui.nombre}</td>
                                 <td>{Ui.correo}</td>
                                 <td>{Ui.fechaIngreso}</td>
-                                <td>{Ui.estado}</td>                                
+                                <td>{Ui.perfil}</td>                                
                             </tr>
                         )
                     })}
@@ -158,4 +158,4 @@ const TablausuariosIngresados = ({listausuariosIngresados}) => {
 
 
 
-export default RegistrarProducto;
+export default RegistrarUsuario;
