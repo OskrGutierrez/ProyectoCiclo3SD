@@ -1,5 +1,6 @@
 import '../styles/login.css'
 import {Link} from 'react-router-dom'
+
 const Logeo=()=>{
     return (
         <div className="login">
@@ -25,7 +26,7 @@ const Logeo=()=>{
                             <a href="">Olvidé mi contraseña</a>
                         </div>
                     </div>
-                    <Link to='/moduloVentas'>
+                    <Link to='/mainModulos'>
                     <div className="boton" id="btnIngresar">Ingresar...</div>
                     </Link>
                     

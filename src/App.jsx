@@ -5,10 +5,15 @@ import {
   Switch,
   Route, 
 } from "react-router-dom";
-import ModuloProductos from './pages/moduloProductos';
+import MainModulos from './pages/mainModulos';
+import MainModuloProductos from './pages/mainModuloProductos';
+import MainModuloUsuarios from './pages/mainModuloUsuarios';
+import MainModuloVentas from './pages/mainModuloVentas';
 import Login from './pages/Login';
 import RegistroProducto from './pages/moduloProductos/RegistrarProducto'
-import VisProductos from './pages/moduloProductos/VerProductos';
+import VisProductos from './pages/moduloProductos/VerActProductos';
+import RegistroUsuario from './pages/moduloUsuarios/RegistrarUsuario'
+import VisUsuarios from './pages/moduloUsuarios/VerActUsuarios';
 
 
 
@@ -17,24 +22,43 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-            <Route path="/moduloProductos">
-              <ModuloProductos/>
-            </Route>
-            
-            
-            <Route path="/RegistrarProducto" exact>
-              <RegistroProducto />              
-            </Route>  
 
-            <Route path="/VerProductos" exact>
-              <VisProductos />              
-            </Route>     
+          <Route path="/mainModulos">
+            <MainModulos />
+          </Route>
 
-            
-            
-            <Route path="/">
-            <Login/>
-            </Route>
+          <Route path="/mainModuloProductos">
+            <MainModuloProductos />
+          </Route>
+
+          <Route path="/RegistrarProducto" exact>
+            <RegistroProducto />
+          </Route>
+
+          <Route path="/VerActProductos" exact>
+            <VisProductos />
+          </Route>
+
+          <Route path="/mainModuloUsuarios">
+            <MainModuloUsuarios />
+          </Route>
+
+          <Route path="/RegistrarUsuario" exact>
+            <RegistroUsuario />
+          </Route>
+
+          <Route path="/VerActUsuarios" exact>
+            <VisUsuarios />
+          </Route>
+
+          <Route path="/mainModuloVentas">
+            <MainModuloVentas />
+          </Route>
+
+
+          <Route path="/">
+            <Login />
+          </Route>
         </Switch>
       </Router>
     </div>

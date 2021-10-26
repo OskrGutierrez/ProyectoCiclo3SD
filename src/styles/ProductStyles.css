@@ -18,6 +18,7 @@
   }
   
   .opctionContainer{
+    display: flex;    
     margin: 10px;
     background-color: white;
     border-bottom-left-radius: 10px;
@@ -25,7 +26,7 @@
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.27); 
-    display: flex;
+    
   }
   
   .opctionContainer:hover{
@@ -45,7 +46,7 @@
   .secondaryTitle{
     color:#264653;
     font-size: 3vh;
-    font-style: oblique;
+    font-style: oblique;   
     text-align: center;
     padding: 3vh;
     text-decoration-line:none;
@@ -163,6 +164,7 @@
 
   tr>th{
     background-color: rgb(92, 172, 128);
+    padding: 1.5vh;
     cursor:initial;    
     width:min-content; 
     border-style: unset;      

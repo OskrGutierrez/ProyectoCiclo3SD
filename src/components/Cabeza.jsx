@@ -25,9 +25,10 @@ const Cabeza = () =>{
           </div>
           <div className="navbar">
               <div className="espacio"></div>
-              <Link to='/moduloUsuarios'><div className="botonesHeader">Usuarios</div></Link>
-              <Link to='/moduloProductos'><div className="botonesHeader">Productos</div></Link>
-              <Link to='/moduloVentas'><div className="botonesHeader">Ventas</div></Link>
+              <Link to='/mainModulos'><div className="botonesHeader">Principal</div></Link>
+              <Link to='/mainModuloUsuarios'><div className="botonesHeader">Usuarios</div></Link>
+              <Link to='/mainModuloProductos'><div className="botonesHeader">Productos</div></Link>
+              <Link to='/mainModuloVentas'><div className="botonesHeader">Ventas</div></Link>
           </div>
         </header>
    

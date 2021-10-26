@@ -8,10 +8,10 @@ const ModuloProductos = () => {
     return (
     <Layout>
     <>
-            <div className='mainTitle'>Qué acción desea realizar?</div>
+            <div className='mainTitle'>Seleccione una acción para el Módulo Productos:</div>
             <div className='routesProductOpctionsContainer'>                              
                 <OpctionsProduct secondTitle='Registrar Nuevo Producto' iconOP='fas fa-plus' productPage='RegistrarProducto'/>         
-                <OpctionsProduct secondTitle='Ver y Actualizar Información de Productos Registrados' iconOP='fas fa-edit' productPage='VerProductos'/>
+                <OpctionsProduct secondTitle='Ver y Actualizar Información de Productos Registrados' iconOP='fas fa-edit' productPage='VerActProductos'/>
                 
             </div>
         </>  

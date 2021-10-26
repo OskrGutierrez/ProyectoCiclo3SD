@@ -68,7 +68,7 @@ function VerProducto() {
                             </div>
 
                             <div className='containerBotonIngreso'>
-                                <Link to='moduloProductos'>
+                                <Link to='mainModuloProductos'>
                                     <button >Atrás</button>
                                 </Link>
                             </div>

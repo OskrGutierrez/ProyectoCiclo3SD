@@ -52,7 +52,7 @@ function RegistrarProducto() {
     
 
     return (
-        <Layout>
+        <Layout >
             <div >
                 <h1 className='mainTitle'>Ingrese información del producto, luego click en Ingresar Producto!</h1>
                 <div >
@@ -90,7 +90,7 @@ function RegistrarProducto() {
                                 </div>
                             </div>  
                             <div className='containerBotonIngreso'>
-                                <Link to='moduloProductos'>
+                                <Link to='mainModuloProductos'>
                                     <button>Atrás</button>
                                 </Link>
                             </div>
@@ -116,7 +116,7 @@ const TablaProductosIngresados = ({listaProductosIngresados}) => {
             <table >
                 <thead className='headTable '>
                     <tr>
-                        <th >ID</th> 
+                        <th >nRef</th> 
                         <th >Nombre</th>
                         <th >Fecha de ingreso</th>
                         <th >Precio antes del IVA</th>                   
