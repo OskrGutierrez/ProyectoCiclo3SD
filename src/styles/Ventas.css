@@ -13,12 +13,15 @@ input{
 input:focus{
     border: 0px;
 }
-.Opciones{
-  display: flex;
-  justify-content: space-evenly;
-  padding: 7px;
 
+.routesProductOpctionsContainer{
+  display: flex; 
+  align-items: unset;  
+  justify-content: space-around; 
+  padding: 0vh; 
+  padding-top: 17vh; 
 }
+
 .botonOpcion{
     height: 20vh;
 }

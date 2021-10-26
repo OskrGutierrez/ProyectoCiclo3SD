@@ -9,7 +9,7 @@ const moduloVentas = () => {
              <>
              <div className='mainTitle'>Qué acción desea realizar?</div>
                 <div className="Opciones">
-                    <OpctionsProduct secondTitle='Nueva Venta' iconOP='fas fa-plus' productPage='NuevaVenta'/>>
+                    <OpctionsProduct secondTitle='Nueva Venta' iconOP='fas fa-plus' productPage='NuevaVenta'/>
                     <OpctionsProduct secondTitle='Editar Ventas' iconOP='fas fa-edit' productPage='ModifVenta'/>
                 </div>
 

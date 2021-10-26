@@ -1,10 +1,18 @@
 
- .productOpctionsContainer{
+ .routesProductOpctionsContainer{
     display: flex; 
     align-items: unset;  
-    justify-content: space-between; 
-    padding: 0vh;  
-        
+    justify-content: space-around; 
+    padding: 0vh; 
+    padding-top: 17vh; 
+    overflow-y: hidden;
+  }
+
+  .productOpctionsContainer{
+    display: flex; 
+    align-items: unset;  
+    justify-content: space-around; 
+    padding: 0vh;     
   }
   
   .opctionContainer{
@@ -51,13 +59,16 @@
   .mainContainerBotonIngresoRegistrar{
     display:flex;    
     padding: 3vh;   
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .containerBotonIngreso{
     display:flex;    
-    padding: 2vh;       
-  }
+    padding: 1vh; 
+    align-items: center;   
+    border-color: red;   
+  }  
+
   .styleTextoInput{    
     font-style: oblique;
     padding-right: 1vh;     
@@ -67,9 +78,16 @@
     padding-right: 3vh;
   }
 
-  .styleBotonInput{
-    padding:0px;
-    max-width: 140px;
+  .styleBotonInput1{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    max-width: 200px;    
+  }
+
+  .styleBotonInput2{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    max-width: 120px;    
   }
 
   .styleNotas{
@@ -81,16 +99,20 @@
 
   .styleMessage{
     padding-left: 3vh;
+    padding-top: 2vh;
     font-weight: bolder;
   }
 
-  .mainContainerInfoSalida{
-    display:flex;        
-    justify-content: space-between;
-    padding: 8vh;
-    padding-top: 0vh;
-    padding-bottom: 3vh;
+  .styleMessageFiltro{
+    display: flex;
+    justify-content: center;
+    padding-left: 3vh;
+    padding-top: 2vh;
+    font-weight: bolder;
+  }
 
+  .containerBotonIngreso > .styleMessage{
+    padding-top: 0vh;
   }
 
   .containerInfoSalida{
@@ -109,10 +131,12 @@
     color: rgb(99, 98, 98);
   }
 
-  .propTabla{
+  .propContainerTable{  
+    flex-direction: column;  
     padding-left: 20vh;    
     padding-right: 20vh;
-    padding-bottom: 5vh;    
+    padding-bottom: 10vh; 
+    padding-top:  0vh;   
   }
 
   .tableTitle{
@@ -121,5 +145,171 @@
     font-weight: bolder;        
     text-align: center;
   }
+  table{
+    width: 100%;  
+    border-width: 0px;  
+    border-spacing: unset;    
+  }  
+
+  .headTable{    
+    border-bottom: none ;
+    color : white;    
+    font-size: 3vh;
+    background-color: rgb(91, 172, 91);   
+  }    
+
+  tr>th{
+    background-color: rgb(92, 172, 128);
+    cursor:initial;    
+    width:min-content; 
+    border-style: unset;      
+ }
+
+  tr>td{
+    background-color: white;
+    width: auto;
+    text-align: center;
+    padding-left: 3vh; 
+    border-style: unset;   
+  }
+
+  tr:nth-child(even) td {
+    background-color: #f2f2f2;
+  }
+
+ tr:hover td {
+   appearance: none;
+    background-color: #ddd;
+    color: black;   
+    font-weight: bolder;
+    cursor:pointer; 
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;   
+     
+}
+
+input {
+  padding: 5px;
+  border-radius: 4px;
+  border-color: gray;
+}
+
+.containerAcciones{
+  display: flex;
+  justify-content: space-around;
+}
+
+.propEditar{
+  color: rgb(172, 133, 27);
+}
+.propEditar:hover{
+  color: yellow;
+  font-size: 3vh;
+}
+
+.propEdicionConfirmar{
+  color: rgb(26, 68, 6);
+}
+.propEdicionConfirmar:hover{
+  color: rgb(25, 255, 4);
+  font-size: 3vh;
+}
+
+.propEliminar{
+  color: rgb(124, 14, 14);
+}
+
+.propEliminar:hover{
+  color: red;
+  font-size: 3vh;
+}
+
+.propEliminacionConfirmar{
+  color: rgb(124, 14, 14);
+}
+
+.propEliminacionConfirmar:hover{
+  color: red;
+  font-size: 3vh;
+}
+
+.mainContainerVerProductos{
+  display: flex;  
+  justify-content: center;
+}
+
+.styleTextoO{    
+  font-style: oblique;
+  padding-right: 4vh;     
+}
+
+.propDialog{  
+  width: 60vh;
+  height: 15vh;  
+  justify-content: space-around;
+  margin: 2vh;
+}
+
+.propMainTextDialog{
+  display: flex;
+  justify-content: center;
+  font-size: 4vh;
+  font-weight: bolder;
+}
+
+.propContainerOpctionsDialog{
+  display:flex;
+  justify-content:space-around
+}
+
+.propOpctionDialogYes{
+  font-size: 3.2vh;
+  background-color: rgb(196, 58, 58);  
+  color: white;
+  border-radius: 1vh;
+  border-width: 0px;  
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+}
+
+.propOpctionDialogYes:hover{   
+  background-color: rgb(160, 9, 9);        
+}
+
+.propOpctionDialogNo{
+  font-size: 3.2vh;
+  background-color: rgb(107, 194, 95);  
+  color: white;
+  border-radius: 1vh;
+  border-width: 0px;
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+}
+
+.propOpctionDialogNo:hover{    
+  background-color: rgb(27, 148, 11);     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   

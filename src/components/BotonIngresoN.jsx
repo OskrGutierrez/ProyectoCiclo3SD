@@ -5,9 +5,16 @@ function BotonIngresoN(props) { /*Boton de Ingreso Number*/
                     {props.nameButton}
                 </div>
 
-                <div>
-                    <input type={props.typeInputButton} min='0' className='styleBotonInput' required/>
-                </div>           
+                <label htmlFor={props.labelName}>
+                    <input 
+                    type={props.typeInputButton} 
+                    min='0' 
+                    className={props.styleBoton}
+                    name={props.labelName}                    
+                    required/>
+                </label>
+                    
+                          
         </li>
     )
 }

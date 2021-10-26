@@ -3,121 +3,150 @@ import BotonIngresoN from "../../components/BotonIngresoN";
 import {Link} from 'react-router-dom';
 import Layout from "../../layouts/Layout";
 import '../../styles/ProductStyles.css';
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
-const ejemploProductosIngresados = [
-    {
-        id:'000001',
-        nombre:'MOUSE',
-        fechaIngreso:'11/05/2020',
-        valorSinIVA: 23000,
-    },
-    {
-        id:'000002',
-        nombre:'TELEVISOR LED LG 32"',
-        fechaIngreso:'11/05/2020',
-        valorSinIVA: 1050000,
-    },
-    {
-        id:'000003',
-        nombre:'PORTATIL ASUS RYZEN5 17"',
-        fechaIngreso:'11/05/2020',
-        valorSinIVA: 1650000,
-    },
-    {
-        id:'000004',
-        nombre:'PORTATIL ACER CORE I7 17"',
-        fechaIngreso:'11/05/2020',
-        valorSinIVA: 2250000,
-    },
-]
 
 function RegistrarProducto() {
 
-    const [botonIngresarProducto, setBotonIngresarProducto] = useState(false)
-    const [productos, setProductos] = useState([])
+    const [mostrarTablaIngresados, setMostrarTablaIngresados] = useState(false)    
+    const [productosIngresados, setProductosIngresados] = useState([])    
 
-    useEffect(()=>{
-        //Obtener info de carros almacenada arriba
-        setProductos(ejemploProductosIngresados)
-    },[])
+    const form=useRef(null)
+
+    const submitForm = async(e) =>{
+        e.preventDefault();
+        const fd = new FormData(form.current);
+
+        const nuevoProducto = {};
+        fd.forEach((value, key) => {
+            nuevoProducto[key] = value;
+        });
+
+        const options = {
+            method: 'POST',
+            url: 'http://localhost:5050/RegistrarProducto',
+            headers: { 'Content-Type': 'application/json' },
+            data: {
+                nRef: nuevoProducto.nRef,
+                nombre: nuevoProducto.nombre,
+                fechaIngreso: nuevoProducto.fechaIngreso,
+                precioAntesIVA: nuevoProducto.precioAntesIVA
+            }
+        };
+
+        await axios.request(options).then(function (response) {
+            console.log(response.data);
+            toast.success('Producto cargado con éxito')  
+        }).catch(function (error) {
+            console.error(error);
+            toast.error('El Producto NO se cargó') 
+        });
+        setProductosIngresados([...productosIngresados, nuevoProducto])          
+        setMostrarTablaIngresados(true) 
+            
+    }  
     
     
-    //const [vehiculos, setVehiculos] = useState([])
 
     return (
         <Layout>
             <div>
                 <h1 className='mainTitle'>Ingrese información del producto, luego click en Ingresar Producto!</h1>
                 <div >
-                    <form className='productOpctionsContainer'>
+                    <form ref={form} onSubmit={submitForm} className='productOpctionsContainer'>                        
                         <div className='mainContainerBotonIngresoRegistrar'>
-                            <BotonIngresoN nameButton='ID del producto:' typeInputButton='number' />
-                            <BotonIngresoNN nameButton='Nombre del producto:' typeInputButton='text' />
-                            <BotonIngresoNN nameButton='Fecha de ingreso:' typeInputButton='date' />
-                            <BotonIngresoN nameButton='Valor antes del IVA:' typeInputButton='number' />
+                            <BotonIngresoNN 
+                            nameButton='nRef:' 
+                            labelName='nRef' 
+                            typeInputButton='text' 
+                            styleBoton='styleBotonInput2'/>
+                            
+                            <BotonIngresoNN 
+                            nameButton='Nombre:' 
+                            labelName='nombre' 
+                            typeInputButton='text' 
+                            styleBoton='styleBotonInput1' />
+                            
+                            <BotonIngresoNN 
+                            nameButton='Fecha de ingreso:' 
+                            labelName='fechaIngreso' 
+                            typeInputButton='date' 
+                            styleBoton='styleBotonInput2' />
+                            
+                            <BotonIngresoN 
+                            nameButton='Precio antes del IVA:' 
+                            labelName='precioAntesIVA' 
+                            typeInputButton='number' 
+                            styleBoton='styleBotonInput2' />
                         </div>
-                        <div className='containerBotonIngreso'>
-                            <div>
-                                <button onClick={() => setBotonIngresarProducto(true)}>Ingresar Producto</button>
+                        <div >
+                            <div className='containerBotonIngreso'>
+                                <button type='submit' >Ingresar Producto</button>
+                                <div className='styleMessage'>
+                                    NOTA: Se debe de ingresar la información del producto en cada uno de los espacios de arriba
+                                </div>
+                            </div>  
+                            <div className='containerBotonIngreso'>
+                                <Link to='moduloProductos'>
+                                    <button>Atrás</button>
+                                </Link>
                             </div>
-                            <div className='styleMessage'>
-                                {botonIngresarProducto && ('El producto se registró satisfactoriamente!')}
-                            </div>
                         </div>
-                        <div className='styleMessage'>
-                            {botonIngresarProducto && <TablaProductosIngresados/>}                             
-                        </div>
-                        <div className='containerBotonIngreso'>
-                            {botonIngresarProducto && (<button onClick={() => setBotonIngresarProducto(false)}> Ingresar otro producto</button>)}
-                        </div>                        
+                        
+                        <div >
+                            {mostrarTablaIngresados && <TablaProductosIngresados listaProductosIngresados={productosIngresados}/> }                                                                                 
+                        </div>                                              
                     </form>
-                    <div className='containerBotonIngreso'>
-                        <Link to='moduloProductos'>
-                            <button>Atrás</button>
-                        </Link>
-                    </div>
-                    <div className='styleNotas'>
-                        {botonIngresarProducto && ('NOTA: Si desea comprobar su registro, click en Atrás y después Ver productos registrados')}                        
-                    </div>
+
+                                       
                 </div>
             </div>
         </Layout>
     )
 }
 
-const TablaProductosIngresados = () => {
+const TablaProductosIngresados = ({listaProductosIngresados}) => {    
+    useEffect(()=>{
+        console.log('Este es el listado de los productos', listaProductosIngresados)
+    },[listaProductosIngresados]) 
     return (
-        <div  className='propTabla' >
-            <h2 className='tableTitle'>Los productos ingresados son:</h2>
-            <table>
-                <thead >
+        <div  className='propContainerTable' >
+            <h2 className='tableTitle'>Los productos ingresados son:</h2>           
+            <table >
+                <thead className='headTable '>
                     <tr>
-                        <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Fecha de ingreso</th>
-                        <th>Precio antes del IVA</th>
+                        <th >ID</th> 
+                        <th >Nombre</th>
+                        <th >Fecha de ingreso</th>
+                        <th >Precio antes del IVA</th>                   
                     </tr>
                 </thead>
 
-                <tbody >
-                    <tr>
-                        <td>000003</td>
-                        <td>PORTATIL ASUS RYZEN5 17pul</td>
-                        <td>11/05/2020</td>
-                        <td>1650000</td>
-                    </tr>
-                    <tr>
-                        <td>000004</td>
-                        <td>PORTATIL ACER COREI7 17pul</td>
-                        <td>11/05/2020</td>
-                        <td>2250000</td>
-                    </tr>
+                <tbody>
+                    {listaProductosIngresados.map((Pi) => {
+                        return (
+                            <tr >
+                                <td>{Pi.nRef}</td>
+                                <td>{Pi.nombre}</td>
+                                <td>{Pi.fechaIngreso}</td>
+                                <td>${Pi.precioAntesIVA}</td>                                
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
+            <div className='styleMessage'>
+                NOTA: Click en atrás y luego Ver Productos Registrados para ver todos los productos que se encuentran en la base de datos
+            </div>
+            <ToastContainer position='bottom-center' autoClose={3000}/>
         </div>
     )
 }
+
+
 
 
 

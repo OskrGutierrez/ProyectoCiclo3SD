@@ -1,5 +1,4 @@
-
-function BotonIngresoNN(props) { /*Boton de Ingreso Not Number*/
+function BotonIngresoNNFiltro(props) { /*Boton de Ingreso Not Number*/
     return (
         <li className='containerBotonIngreso'>
                 <div className='styleTextoInput'>
@@ -9,11 +8,12 @@ function BotonIngresoNN(props) { /*Boton de Ingreso Not Number*/
                     <input 
                     type={props.typeInputButton} 
                     className={props.styleBoton} 
-                    name={props.labelName}                    
-                    required />
+                    name={props.labelName} 
+                    placeholder='Buscar'
+                    value={props.vValue}
+                    onChange={props.vOnChange}/>
                 </label>                           
         </li>
     )
 }
-export default BotonIngresoNN;
-
+export default BotonIngresoNNFiltro;
