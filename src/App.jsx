@@ -16,12 +16,18 @@ import RegistroUsuario from './pages/moduloUsuarios/RegistrarUsuario'
 import VisUsuarios from './pages/moduloUsuarios/VerActUsuarios';
 import RegistroVenta from './pages/moduloVentas/RegistrarVenta';
 import VisVentas from './pages/moduloVentas/VerActVentas';
+import { Auth0Provider } from "@auth0/auth0-react";
 
 
 
 function App() {
   return (
-    <div className="App">
+    <Auth0Provider 
+    domain="marketsd.us.auth0.com"
+    clientId="lCrfLXdhhu7MK3KvLdrJApbvHG76MiBV"
+    redirectUri={window.location.origin}
+    >
+<div className="App">
       <Router>
         <Switch>
 
@@ -71,6 +77,9 @@ function App() {
         </Switch>
       </Router>
     </div>
+
+    </Auth0Provider>
+    
   )
 }
 

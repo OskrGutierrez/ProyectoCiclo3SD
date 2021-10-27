@@ -3,9 +3,11 @@ import logo from '../media/SDblanco.png'
 import {Link} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 const Cabeza = () =>{
+    const { loginWithRedirect } = useAuth0();
     return(
         <header>
           <div className="contHead">
@@ -29,6 +31,7 @@ const Cabeza = () =>{
               <Link to='/mainModuloUsuarios'><div className="botonesHeader">Usuarios</div></Link>
               <Link to='/mainModuloProductos'><div className="botonesHeader">Productos</div></Link>
               <Link to='/mainModuloVentas'><div className="botonesHeader">Ventas</div></Link>
+              <button onClick={() => loginWithRedirect()}>Iniciar Sesión</button>
           </div>
         </header>
    
