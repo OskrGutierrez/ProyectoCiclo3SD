@@ -1,0 +1,89 @@
+body{
+  margin: 0px;
+}
+ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  color: #000000;
+}
+
+.containerLayout{
+  display: flex;
+  flex-direction:column;
+  height:100vh ;
+  overflow-y: hidden;  
+}
+
+.containerLayoutVer{
+  display: flex;
+  flex-direction:column;
+  height:100% ;
+  overflow-y: hidden;  
+}
+
+.containerMainVer{
+  display: flex;
+  flex-direction: column;
+  height: 100%;  
+  
+}
+
+.containerMainScroll{
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  overflow-y: scroll;   
+}
+
+.navBar1{
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+  background-color: #82C0CC;
+}
+.navBarinterno{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.navBar2{
+  display: flex;
+  justify-content: space-around;
+  padding: 4px;
+  background-color: #FFA62B;
+}
+
+.piePagina{
+  display: flex;
+  justify-content: flex-end;
+  background-color: #82C0CC;
+  padding: 0px;
+}
+
+
+
+.button{
+  border: 0px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bolder;
+  color: #16697A;
+}
+.button:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.mainButton{
+  background-color: #EDE7E3;
+  box-shadow: 2px 2px #FFA62B ;
+}
+
+.secundaryButton{
+  background-color: #EDE7E3;
+  box-shadow: 2px 2px #82C0CC ;
+}
+

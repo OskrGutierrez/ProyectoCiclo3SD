@@ -1,0 +1,83 @@
+.contHead{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    background-color: rgb(38, 70, 83);
+    color: white;
+}
+
+.imglog{
+    max-height: 45px;
+    width: auto;
+    margin: 5px;
+}
+
+.logoB{
+    width: 20%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+}
+
+.titulo{
+    width: 50%;
+}
+
+.usuario{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+
+}
+
+.nombre{
+    font-weight: 600;
+}
+
+.btnSalir{
+    width: 10%;
+    background-color: rgb(38, 70, 83);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+}
+
+.btnSalir:hover{
+    color: rgb(231, 111, 81);
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: right;
+    padding: 3px;
+    background-color: rgb(231, 111, 81);
+    color: rgb(255, 255, 255);
+    vertical-align: middle;
+
+}
+
+.espacio{
+    width: 60%
+}
+.botonesHeader{
+    width: 10%;
+    text-align: left;
+    font-size: medium;
+    font-weight: lighter;
+}
+
+.botonesHeader:hover{
+    color: rgb(38, 70, 83);
+    font-weight: 600;
+    cursor: pointer;
+    
+}
