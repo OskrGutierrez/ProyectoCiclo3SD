@@ -23,7 +23,7 @@ const Cabeza = () =>{
                   <div className="nombre">NOMBRE USUARIO</div>
                   <div className="rol">Tipo de Usuario</div>
               </div>
-              <button className="btnSalir" onClick={() => loginWithRedirect()}>Iniciar Sesión</button>
+              <button className='btnSalir' onClick={() => logout({ returnTo: window.location.origin })}>Cerrar Sesión<FontAwesomeIcon icon={faRightFromBracket} /></button>
                
           </div>
           <div className="navbar">
@@ -32,8 +32,6 @@ const Cabeza = () =>{
               <Link to='/mainModuloUsuarios'><div className="botonesHeader">Usuarios</div></Link>
               <Link to='/mainModuloProductos'><div className="botonesHeader">Productos</div></Link>
               <Link to='/mainModuloVentas'><div className="botonesHeader">Ventas</div></Link>
-              
-              <button className='botonesHeader' onClick={() => logout({ returnTo: window.location.origin })}>Cerrar Sesión<FontAwesomeIcon icon={faRightFromBracket} /></button>
           </div>
         </header>
    
