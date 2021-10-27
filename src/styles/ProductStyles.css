@@ -136,8 +136,8 @@
 
   .propContainerTable{  
     flex-direction: column;  
-    padding-left: 20vh;    
-    padding-right: 20vh;
+    padding-left: 7vh;    
+    padding-right: 7vh;
     padding-bottom: 10vh; 
     padding-top:  0vh;   
   }

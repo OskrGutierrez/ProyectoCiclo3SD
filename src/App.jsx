@@ -14,6 +14,8 @@ import RegistroProducto from './pages/moduloProductos/RegistrarProducto'
 import VisProductos from './pages/moduloProductos/VerActProductos';
 import RegistroUsuario from './pages/moduloUsuarios/RegistrarUsuario'
 import VisUsuarios from './pages/moduloUsuarios/VerActUsuarios';
+import RegistroVenta from './pages/moduloVentas/RegistrarVenta';
+import VisVentas from './pages/moduloVentas/VerActVentas';
 
 
 
@@ -55,6 +57,13 @@ function App() {
             <MainModuloVentas />
           </Route>
 
+          <Route path="/RegistrarVenta" exact>
+            <RegistroVenta />
+          </Route>
+
+          <Route path="/VerActVentas" exact>
+            <VisVentas />
+          </Route>
 
           <Route path="/">
             <Login />

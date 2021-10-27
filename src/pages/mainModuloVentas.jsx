@@ -10,8 +10,8 @@ const ModuloVentas = () => {
     <>
             <div className='mainTitle'>Seleccione una acción para el Módulo Ventas:</div>
             <div className='routesProductOpctionsContainer'>                              
-                <OpctionsProduct secondTitle='Registrar Nueva Venta' iconOP='fas fa-plus' productPage='RegistrarProducto'/>         
-                <OpctionsProduct secondTitle='Ver y Actualizar Información de Ventas Registradas' iconOP='fas fa-edit' productPage='VerProductos'/>
+                <OpctionsProduct secondTitle='Registrar Nueva Venta' iconOP='fas fa-plus' productPage='RegistrarVenta'/>         
+                <OpctionsProduct secondTitle='Ver y Actualizar Información de Ventas Registradas' iconOP='fas fa-edit' productPage='VerActVentas'/>
                 
             </div>
         </>  

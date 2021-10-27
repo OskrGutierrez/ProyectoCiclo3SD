@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-function VerUsuario() {
+function VerVenta() {
     const [productos, setProductos] = useState([])
     const [mostrarTablaCompleta, setMostrarTablaCompleta] = useState(true)
     const [ejecutarConsulta, setEjecutarConsulta] = useState(true)    
@@ -23,7 +23,7 @@ function VerUsuario() {
 
     useEffect(() => { 
         const obtenerProductos = async () => {
-            const options = { method: 'GET', url: 'http://localhost:5050/VerUsuarios' };
+            const options = { method: 'GET', url: 'http://localhost:5050/VerVentas' };
             await axios
                 .request(options)
                 .then(function (response) {
@@ -49,11 +49,11 @@ function VerUsuario() {
 
         <LayoutVer>
             <div>
-                <h1 className='mainTitle'>Visualización y actualización de información de los usuarios!</h1>
+                <h1 className='mainTitle'>Visualización y actualización de información de las ventas!</h1>
                 <div>
                     <form >
                         <div className='styleMessageFiltro'>
-                            NOTA: Filtre por código/Cc., por Nombre, por Correo, por Fecha de ingreso o por Perfil:
+                            NOTA: Filtre por nRef, por Cliente, por Fecha de venta, por Vendedor, por Valor de venta o Estado de venta:
                         </div>
                         <div className='productOpctionsContainer'>
 
@@ -68,7 +68,7 @@ function VerUsuario() {
                             </div>
 
                             <div className='containerBotonIngreso'>
-                                <Link to='mainModuloUsuarios'>
+                                <Link to='mainModuloVentas'>
                                     <button >Atrás</button>
                                 </Link>
                             </div>
@@ -103,11 +103,12 @@ const TablaCompletaProductos = ({listaproductosCompleta, setEjecutarConsulta, bu
             <table >
                 <thead className='headTable propTable'>
                     <tr>
-                        <th >Código/Cc.</th> 
-                        <th >Nombres/apellido</th>
-                        <th >Correo de contacto</th>
-                        <th >Fecha de ingreso</th>
-                        <th >Perfil</th>
+                        <th >nRef</th> 
+                        <th >Cliente</th>
+                        <th >Fecha venta</th>
+                        <th >Vendedor</th>
+                        <th >Valor venta</th>
+                        <th >Estado venta</th>
                         <th >Acciones</th>
                         
                     </tr>
@@ -133,18 +134,19 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
         const [openDialog, setOpenDialog] = useState(false);        
         const [infoNuevoProducto, setInfoNuevoProducto] = useState({                       
             _id:Pi.id,
-            codigo: Pi.codigo,    
-            nombre: Pi.nombre,
-            correo: Pi.correo,
-            fechaIngreso: Pi.fechaIngreso,
-            perfil: Pi.perfil,
+            nRef: Pi.nRef,    
+            cliente: Pi.cliente,
+            fechaVenta: Pi.fechaVenta,
+            vendedor: Pi.vendedor,
+            valorVenta: Pi.valorVenta,
+            estadoVenta: Pi.estadoVenta,
         })
     
         const actualizarProducto = async() =>{
             console.log('Se actualizó y se envió a la BD',infoNuevoProducto)
             const options = {
                 method: 'PATCH',
-                url: 'http://localhost:5050/EditarUsuario',
+                url: 'http://localhost:5050/EditarVenta',
                 headers: {'Content-Type': 'application/json'},
                 data: {...infoNuevoProducto, id : Pi._id}
               };
@@ -167,14 +169,14 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
 
             const options = {
                 method: 'DELETE',
-                url: 'http://localhost:5050/EliminarUsuario',
+                url: 'http://localhost:5050/EliminarVenta',
                 headers: {'Content-Type': 'application/json'},
                 data: { id : Pi._id}
               };
               
               await axios.request(options).then(function (response) {
                 console.log(response.data);
-                toast.success('Producto eliminado con éxito');
+                toast.success('Venta eliminada con éxito');
                 setEdit(false)
                 setEjecutarConsulta(true)
               }).catch(function (error) {
@@ -191,42 +193,49 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
                         <td>
                             <input 
                             type='text' 
-                            value={infoNuevoProducto.codigo} 
-                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, codigo: e.target.value})}/>
+                            value={infoNuevoProducto.nRef} 
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, nRef: e.target.value})}/>
                         </td>
                         <td>
                             <input 
                             type='text' 
-                            value={infoNuevoProducto.nombre}
-                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, nombre: e.target.value})}/>
-                        </td>
-                        <td>
-                            <input 
-                            type='email' 
-                            value={infoNuevoProducto.correo}
-                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, correo: e.target.value})}/>
+                            value={infoNuevoProducto.cliente}
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, cliente: e.target.value})}/>
                         </td>
                         <td>
                             <input 
                             type='date' 
-                            value={infoNuevoProducto.fechaIngreso}
-                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, fechaIngreso: e.target.value})}/>
+                            value={infoNuevoProducto.fechaVenta}
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, fechaVenta: e.target.value})}/>
                         </td>
                         <td>
                             <input 
-                            type='ntext' 
-                            value={infoNuevoProducto.perfil}
-                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, perfil: e.target.value})}/>                            
+                            type='text' 
+                            value={infoNuevoProducto.vendedor}
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, vendedor: e.target.value})}/>
+                        </td>
+                        <td>
+                            <input 
+                            type='text' 
+                            value={infoNuevoProducto.valorVenta}
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, valorVenta: e.target.value})}/>                            
+                        </td>
+                        <td>
+                            <input 
+                            type='text' 
+                            value={infoNuevoProducto.estadoVenta}
+                            onChange={(e)=>setInfoNuevoProducto({...infoNuevoProducto, estadoventa: e.target.value})}/>                            
                         </td>
                     </>
 
                 ) : (
                     <>
-                        <td>{Pi.codigo}</td>
-                        <td>{Pi.nombre}</td>
-                        <td>{Pi.correo}</td>
-                        <td>{Pi.fechaIngreso}</td>
-                        <td>{Pi.perfil}</td>
+                        <td>{Pi.nRef}</td>
+                        <td>{Pi.cliente}</td>
+                        <td>{Pi.fechaVenta}</td>
+                        <td>{Pi.vendedor}</td>
+                        <td>{Pi.valorVenta}</td>
+                        <td>{Pi.estadoVenta}</td>
                     </>
                 )}
 
@@ -239,7 +248,7 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
                                             className='fas fa-check propEdicionConfirmar' />
                                     </Tooltip>)
                                 
-                                : (<Tooltip title='Editar usuario' arrow placement='left'>
+                                : (<Tooltip title='Editar venta' arrow placement='left'>
                                     <i onClick={() =>  setEdit(!edit)}
                                         className='fas fa-pencil-alt propEditar' />
                                 </Tooltip>
@@ -255,7 +264,7 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
                                     </Tooltip>)                                    
                                 
                                 : (
-                                    <Tooltip title='Eliminar usuario' arrow placement='right'>
+                                    <Tooltip title='Eliminar venta' arrow placement='right'>
                                         <i onClick={() =>  setEdit(!edit)}
                                             className='fas fa-trash propEliminar' />
                                     </Tooltip>
@@ -286,4 +295,4 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
         )
     }
 
-export default VerUsuario;
+export default VerVenta;
