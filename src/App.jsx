@@ -31,9 +31,7 @@ function App() {
       <Router>
         <Switch>
 
-          <Route path="/mainModulos">
-            <MainModulos />
-          </Route>
+
 
           <Route path="/mainModuloProductos">
             <MainModuloProductos />
@@ -70,10 +68,11 @@ function App() {
           <Route path="/VerActVentas" exact>
             <VisVentas />
           </Route>
-
+          
           <Route path="/">
-            <Login />
+            <MainModulos />
           </Route>
+
         </Switch>
       </Router>
     </div>

@@ -6,8 +6,10 @@ import {faRightFromBracket} from '@fortawesome/free-solid-svg-icons'
 import { useAuth0 } from "@auth0/auth0-react";
 
 
+
 const Cabeza = () =>{
     const { loginWithRedirect } = useAuth0();
+    const { logout } = useAuth0();
     return(
         <header>
           <div className="contHead">
@@ -21,9 +23,8 @@ const Cabeza = () =>{
                   <div className="nombre">NOMBRE USUARIO</div>
                   <div className="rol">Tipo de Usuario</div>
               </div>
-               <Link to='/'className='btnSalir'>
-                   <div ><FontAwesomeIcon icon={faRightFromBracket} /></div>
-               </Link>
+              <button className="btnSalir" onClick={() => loginWithRedirect()}>Iniciar Sesión</button>
+               
           </div>
           <div className="navbar">
               <div className="espacio"></div>
@@ -31,7 +32,8 @@ const Cabeza = () =>{
               <Link to='/mainModuloUsuarios'><div className="botonesHeader">Usuarios</div></Link>
               <Link to='/mainModuloProductos'><div className="botonesHeader">Productos</div></Link>
               <Link to='/mainModuloVentas'><div className="botonesHeader">Ventas</div></Link>
-              <button onClick={() => loginWithRedirect()}>Iniciar Sesión</button>
+              
+              <button className='botonesHeader' onClick={() => logout({ returnTo: window.location.origin })}>Cerrar Sesión<FontAwesomeIcon icon={faRightFromBracket} /></button>
           </div>
         </header>
    

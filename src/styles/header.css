@@ -46,10 +46,13 @@
     justify-content: center;
     align-items: center;
     font-size: larger;
+    border: none;
+    color: white;
 }
 
 .btnSalir:hover{
-    color: rgb(231, 111, 81);
+    color: rgb(38, 70, 83);
+    background-color: rgb(244, 162, 97);
 }
 
 .navbar{
@@ -73,6 +76,9 @@
     text-align: left;
     font-size: medium;
     font-weight: lighter;
+    border: none;
+    background: none;
+    color: white;
 }
 
 .botonesHeader:hover{
