@@ -8,9 +8,7 @@ const Layout = ({children}) => {
         
         <div className='containerLayout'>
             <Cabeza></Cabeza>
-            <PrivateRoute>
             <main className='containerMainScroll'>{children}</main>
-            </PrivateRoute>
             <Footer></Footer>            
         </div>
         
