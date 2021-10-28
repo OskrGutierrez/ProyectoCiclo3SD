@@ -29,7 +29,7 @@ function RegistrarVenta() {
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:5050/RegistrarVenta',
+            url: `${baseURL}/RegistrarVenta`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 nRef: nuevoUsuario.nRef,

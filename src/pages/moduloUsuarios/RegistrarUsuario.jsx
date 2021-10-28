@@ -29,7 +29,7 @@ function RegistrarUsuario() {
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:5050/RegistrarUsuario',
+            url: `${baseURL}/RegistrarUsuario`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 codigo: nuevoUsuario.codigo,

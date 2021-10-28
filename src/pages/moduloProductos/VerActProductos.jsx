@@ -23,7 +23,7 @@ function VerProducto() {
 
     useEffect(() => { 
         const obtenerProductos = async () => {
-            const options = { method: 'GET', url: 'http://localhost:5050/VerProductos' };
+            const options = { method: 'GET', url: `${baseURL}/VerProductos` };
             await axios
                 .request(options)
                 .then(function (response) {
@@ -142,7 +142,7 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
             console.log('Se actualizó y se envió a la BD',infoNuevoProducto)
             const options = {
                 method: 'PATCH',
-                url: 'http://localhost:5050/EditarProducto',
+                url: `${baseURL}/EditarProducto`,
                 headers: {'Content-Type': 'application/json'},
                 data: {...infoNuevoProducto, id : Pi._id}
               };
@@ -165,7 +165,7 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
 
             const options = {
                 method: 'DELETE',
-                url: 'http://localhost:5050/EliminarProducto',
+                url: `${baseURL}/EliminarProducto`,
                 headers: {'Content-Type': 'application/json'},
                 data: { id : Pi._id}
               };

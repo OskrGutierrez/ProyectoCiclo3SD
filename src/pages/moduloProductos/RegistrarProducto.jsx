@@ -27,7 +27,7 @@ function RegistrarProducto() {
 
         const options = {
             method: 'POST',
-            url: 'http://localhost:5050/RegistrarProducto',
+            url: `${baseURL}/RegistrarProducto`,
             headers: { 'Content-Type': 'application/json' },
             data: {
                 nRef: nuevoProducto.nRef,

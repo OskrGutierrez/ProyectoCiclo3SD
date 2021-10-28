@@ -23,7 +23,7 @@ function VerUsuario() {
 
     useEffect(() => { 
         const obtenerProductos = async () => {
-            const options = { method: 'GET', url: 'http://localhost:5050/VerUsuarios' };
+            const options = { method: 'GET', url: `${baseURL}/VerUsuarios` };
             await axios
                 .request(options)
                 .then(function (response) {
@@ -144,7 +144,7 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
             console.log('Se actualizó y se envió a la BD',infoNuevoProducto)
             const options = {
                 method: 'PATCH',
-                url: 'http://localhost:5050/EditarUsuario',
+                url: `${baseURL}/EditarUsuario`,
                 headers: {'Content-Type': 'application/json'},
                 data: {...infoNuevoProducto, id : Pi._id}
               };
@@ -167,7 +167,7 @@ const FilaProducto = ({Pi, setEjecutarConsulta}) => {
 
             const options = {
                 method: 'DELETE',
-                url: 'http://localhost:5050/EliminarUsuario',
+                url: `${baseURL}/EliminarUsuario`,
                 headers: {'Content-Type': 'application/json'},
                 data: { id : Pi._id}
               };
